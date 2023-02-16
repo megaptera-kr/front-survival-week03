@@ -14,7 +14,7 @@ export default function App() {
             acc.includes(restaurant.category)
                 ? acc
                 : [...acc, restaurant.category],
-        ['전체']
+        ['전체'],
     );
 
     return (
