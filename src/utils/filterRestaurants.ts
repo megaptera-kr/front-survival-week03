@@ -16,6 +16,6 @@ export default function filterRestaurants(
   if (!filterText) return filteredRestaurantsData;
 
   return filteredRestaurantsData.filter((restaurant) => (
-    restaurant.name.includes(filterText)
+    restaurant.name.includes(filterText.trim())
   ));
 }
