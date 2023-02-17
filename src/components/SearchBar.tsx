@@ -2,11 +2,16 @@ import { ChangeEvent } from 'react';
 
 type SearchBarProps = {
     placeholder: string
+    filterText: string;
+    setFilterText: (text: string) => void;
   }
 
-export default function SearchBar({ placeholder }: SearchBarProps) {
+export default function SearchBar({
+  placeholder, filterText, setFilterText,
+}: SearchBarProps) {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
+    setFilterText(value);
   };
 
   return (
@@ -16,7 +21,7 @@ export default function SearchBar({ placeholder }: SearchBarProps) {
         id="search-bar"
         type="text"
         placeholder={placeholder}
-        value=""
+        value={filterText}
         onChange={handleChange}
       />
     </div>

@@ -6,11 +6,20 @@ import Restaurant from '../types/Restaurant';
 
 const context = describe;
 
+const setFilterText = jest.fn();
+const setFilterCategory = jest.fn();
+
+let filterText: string;
 let restaurants: Restaurant[];
 
 describe('SearchField', () => {
   function renderSearchField() {
-    render(<SearchField restaurants={restaurants} />);
+    render(<SearchField
+      filterText={filterText}
+      setFilterText={setFilterText}
+      setFilterCategory={setFilterCategory}
+      restaurants={restaurants}
+    />);
   }
 
   context('사용자가 페이지에 접속하면', () => {
