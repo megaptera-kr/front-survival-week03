@@ -4,6 +4,7 @@ import FilterableTable from './common/FilterableTable';
 import SearchBar from './SearchBar';
 import FilterCategoryButtonGroup from './FilterCategoryButtonGroup';
 import RestaurantTable from './RestaurantTable';
+import filterRestaurants from '../utils/filterRestaurants';
 
 type FilterableRestaurantProps = {
   data: Restaurants[]
@@ -11,6 +12,8 @@ type FilterableRestaurantProps = {
 
 function Restaurant({ data }:FilterableRestaurantProps) {
   const [filterText, setFilterText] = useState('');
+
+  const filteredRestaurants = filterText.length ? filterRestaurants(data, filterText) : data;
 
   return (
     <div className="restaurants">
@@ -25,7 +28,7 @@ function Restaurant({ data }:FilterableRestaurantProps) {
           </>
         )}
         />
-        <FilterableTable.View view={<RestaurantTable restaurants={data} />} />
+        <FilterableTable.View view={<RestaurantTable restaurants={filteredRestaurants} />} />
       </FilterableTable>
     </div>
   );
