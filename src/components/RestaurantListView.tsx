@@ -1,7 +1,26 @@
-import { Restaurants } from '../types/filterableProductTable';
+import { RestaurantMenu, Restaurants } from '../types/filterableProductTable';
 
 type RestaurantListViewProps = {
   restaurant: Restaurants
+}
+
+type RestaurantListMenuProps = {
+  menu: RestaurantMenu[]
+}
+
+function RestaurantListMenu({ menu }: RestaurantListMenuProps) {
+  return (
+    <>
+      {
+        menu.map((menuItem) => (
+          <ul key={menuItem.id}>
+            <li>{`${menuItem.name}(${menuItem.price})`}</li>
+          </ul>
+
+        ))
+      }
+    </>
+  );
 }
 
 function RestaurantListView({ restaurant }: RestaurantListViewProps) {
@@ -9,16 +28,7 @@ function RestaurantListView({ restaurant }: RestaurantListViewProps) {
     <tr key={restaurant.id}>
       <td>{restaurant.name}</td>
       <td>{restaurant.category}</td>
-      <td>
-        {
-          restaurant.menu.map((menuItem) => (
-            <ul key={menuItem.id}>
-              <li>{`${menuItem.name}(${menuItem.price})`}</li>
-            </ul>
-
-          ))
-        }
-      </td>
+      <td><RestaurantListMenu menu={restaurant.menu} /></td>
     </tr>
   );
 }
