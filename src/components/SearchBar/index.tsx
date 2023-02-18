@@ -1,9 +1,11 @@
+import InputField from '../InputField';
+
 function SearchBar() {
   return (
     <div className="search-bar">
-      <label htmlFor="restaurant-name">검색</label>
-      <input type="text" id="restaurant-name" />
+      <InputField type="text" label="검색" name="restaurant-search" />
     </div>
+
   );
 }
 
