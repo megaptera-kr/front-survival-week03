@@ -14,12 +14,8 @@ function Restaurant({ data }:FilterableRestaurantProps) {
       <FilterableTable>
         <FilterableTable.Toolbar toolbar={(
           <>
-            <div style={{ padding: '8px 0' }}>
-              <SearchBar />
-            </div>
-            <div style={{ padding: '8px 0' }}>
-              <FilterCategoryButtonGroup />
-            </div>
+            <SearchBar />
+            <FilterCategoryButtonGroup />
           </>
         )}
         />

@@ -8,13 +8,13 @@ function FilterableTable({ children }: PropsWithChildren) {
 
 function Toolbar({ toolbar }: {toolbar: React.ReactNode}) {
   return (
-    <div>{toolbar}</div>
+    <div className="filterable-table-toolbar">{toolbar}</div>
   );
 }
 
 function View({ view }: {view: React.ReactNode}) {
   return (
-    <div>{view}</div>
+    <div className="filterable-table-view">{view}</div>
   );
 }
 

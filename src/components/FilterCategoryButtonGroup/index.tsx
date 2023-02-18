@@ -17,6 +17,7 @@ const CATEGORY_BUTTON_MAP = [{
 const buttonStyles = {
   display: 'flex',
   gap: '16px',
+  padding: '16px 0',
 };
 
 function FilterCategoryButtonGroup() {
