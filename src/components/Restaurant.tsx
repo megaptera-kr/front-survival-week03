@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Restaurants } from '../types/filterableProductTable';
 import FilterableTable from './common/FilterableTable';
 import SearchBar from './SearchBar';
@@ -9,12 +10,17 @@ type FilterableRestaurantProps = {
 }
 
 function Restaurant({ data }:FilterableRestaurantProps) {
+  const [filterText, setFilterText] = useState('');
+
   return (
     <div className="restaurants">
       <FilterableTable>
         <FilterableTable.Toolbar toolbar={(
           <>
-            <SearchBar />
+            <SearchBar
+              filterText={filterText}
+              onChangeFilterText={(value: string) => setFilterText(value)}
+            />
             <FilterCategoryButtonGroup />
           </>
         )}
