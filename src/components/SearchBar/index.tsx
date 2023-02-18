@@ -1,4 +1,4 @@
-import InputField from '../common/InputField';
+import InputField from '../InputField';
 
 function SearchBar() {
   return (
