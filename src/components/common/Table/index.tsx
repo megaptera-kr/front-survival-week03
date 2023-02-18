@@ -1,22 +1,33 @@
-import React, { PropsWithChildren } from 'react';
+import React, { CSSProperties, PropsWithChildren } from 'react';
 
-export type TableProps = PropsWithChildren
+type TablePropsWithStyle = {
+   style?: CSSProperties
+}
 
-function Table({ children }: TableProps) {
+type TableHeaderProps = {
+   header: React.ReactNode
+} & TablePropsWithStyle
+
+type TableRowProps = {
+   row: React.ReactNode
+
+}& TablePropsWithStyle
+
+function Table({ children }: PropsWithChildren) {
   return (
     <table>{children}</table>
   );
 }
 
-function TableHeader({ header }: {header: React.ReactNode}) {
+function TableHeader({ header, style }: TableHeaderProps) {
   return (
-    <thead>{header}</thead>
+    <thead style={style}>{header}</thead>
   );
 }
 
-function TableRow({ row }: {row: React.ReactNode}) {
+function TableRow({ row, style }: TableRowProps) {
   return (
-    <tbody>{row}</tbody>
+    <tbody style={style}>{row}</tbody>
   );
 }
 
