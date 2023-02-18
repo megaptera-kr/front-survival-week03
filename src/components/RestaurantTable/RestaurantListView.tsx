@@ -1,4 +1,4 @@
-import { RestaurantMenu, Restaurants } from '../types/filterableProductTable';
+import { RestaurantMenu, Restaurants } from '../../types/filterableProductTable';
 
 type RestaurantListViewProps = {
   restaurant: Restaurants
