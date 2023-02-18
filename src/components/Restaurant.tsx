@@ -13,7 +13,7 @@ type FilterableRestaurantProps = {
 function Restaurant({ data }:FilterableRestaurantProps) {
   const [filterText, setFilterText] = useState('');
 
-  const filteredRestaurants = filterText.length ? filterRestaurants(data, filterText) : data;
+  const filteredRestaurants = filterRestaurants(data, filterText);
 
   return (
     <div className="restaurants">
