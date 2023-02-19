@@ -1,16 +1,32 @@
-import { Restaurants } from '../types/filterableProductTable';
+import { Restaurants } from '../types/filterableRestaurant';
+
+type filterCondition = {
+  filterText: string
+  filterButton: string
+}
+
+const BUTTON_QUERY_INIT = '전체';
 
 function normalize(text: string) {
   return text.trim();
 }
 
-function filterRestaurants(items: Restaurants[], filterText: string) {
-  const query = normalize(filterText);
+const contain = (item: string, query: string) => item.includes(query);
 
-  if (!query) return items;
+function filterRestaurants(items: Restaurants[], { filterText, filterButton }: filterCondition) {
+  const textQuery = normalize(filterText);
+  const buttonQuery = filterButton;
 
-  const contains = (item:Restaurants) => item.category.includes(query);
+  return items.reduce((acc: Restaurants[], cur) => {
+    const filterTextCondition = contain(cur.name, textQuery) || !textQuery;
+    const filterButtonCondition = contain(cur.category, buttonQuery)
+      || buttonQuery === BUTTON_QUERY_INIT;
 
-  return items.filter(contains);
+    if (filterTextCondition && filterButtonCondition) {
+      acc.push(cur);
+    }
+
+    return acc;
+  }, []);
 }
 export default filterRestaurants;
