@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Restaurants } from '../types/filterableRestaurant';
+import { RestaurantsTable } from '../types/filterableRestaurant';
 import FilterableTable from './common/FilterableTable';
 import SearchBar from './SearchBar';
 import FilterCategoryButtonGroup from './FilterCategoryButtonGroup';
-import RestaurantTable from './RestaurantTable';
+import Restaurants from './Restaurants';
 import filterRestaurants from '../utils/filterRestaurants';
 
 type FilterableRestaurantProps = {
-  data: Restaurants[]
+  data: RestaurantsTable[]
 }
 
 const CategoryButtonMap: Record<string, string> = {
@@ -17,15 +17,15 @@ const CategoryButtonMap: Record<string, string> = {
   3: '일식',
 };
 
-function Restaurant({ data }:FilterableRestaurantProps) {
-  const [filterText, setFilterText] = useState('');
-  const [filterButton, setFilterButton] = useState('');
+function FilterableRestaurantsTable({ data }:FilterableRestaurantProps) {
+  const [filterSearchText, setFilterSearchText] = useState('');
+  const [filterCategoryButton, setFilterCategoryButton] = useState('');
 
-  const filteredRestaurants = filterRestaurants(data, { filterText, filterButton });
+  const filteredRestaurants = filterRestaurants(data, { filterSearchText, filterCategoryButton });
 
   const onClickFilterButton = (currentValue: string) => {
     const selectedButtonValue = CategoryButtonMap[currentValue];
-    setFilterButton(selectedButtonValue);
+    setFilterCategoryButton(selectedButtonValue);
   };
 
   return (
@@ -34,8 +34,8 @@ function Restaurant({ data }:FilterableRestaurantProps) {
         <FilterableTable.Toolbar toolbar={(
           <>
             <SearchBar
-              filterText={filterText}
-              onChangeFilterText={(value: string) => setFilterText(value)}
+              filterText={filterSearchText}
+              onChangeFilterText={(value: string) => setFilterSearchText(value)}
             />
             <FilterCategoryButtonGroup
               onClickFilterButton={(value: string) => onClickFilterButton(value)}
@@ -43,10 +43,10 @@ function Restaurant({ data }:FilterableRestaurantProps) {
           </>
         )}
         />
-        <FilterableTable.View view={<RestaurantTable restaurants={filteredRestaurants} />} />
+        <FilterableTable.View view={<Restaurants restaurants={filteredRestaurants} />} />
       </FilterableTable>
     </div>
   );
 }
 
-export default Restaurant;
+export default FilterableRestaurantsTable;

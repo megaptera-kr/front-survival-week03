@@ -19,7 +19,7 @@ function TextField({
   const id = useRef(`input-${name}`.replace(/ /g, '-').toLowerCase());
 
   return (
-    <div>
+    <>
       <label htmlFor={id.current}>{label}</label>
       <input
         type="text"
@@ -28,7 +28,7 @@ function TextField({
         value={filterText}
         onChange={onClickChange}
       />
-    </div>
+    </>
   );
 }
 

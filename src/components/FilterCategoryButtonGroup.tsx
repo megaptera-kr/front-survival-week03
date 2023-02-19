@@ -1,4 +1,4 @@
-import Button from '../common/Button';
+import Button from './common/Button';
 
 const CATEGORY_BUTTON_MAP = [{
   id: 10,

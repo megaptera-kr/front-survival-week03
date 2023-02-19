@@ -1,15 +1,14 @@
-export type RestaurantMenu = {
+export type RestaurantTableMenu = {
     id: string
     name: string
     price: number
 
 }
-
-export type Restaurants = {
+export type RestaurantsTable = {
 
     id: string
     category: string
     name: string
-    menu: RestaurantMenu[]
+    menu: RestaurantTableMenu[]
 
 }

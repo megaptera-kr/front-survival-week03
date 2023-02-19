@@ -1,4 +1,4 @@
-import TextField from '../common/TextField';
+import TextField from './common/TextField';
 
 type SearchBar = {
   filterText: string
@@ -7,7 +7,7 @@ type SearchBar = {
 
 function SearchBar({ filterText, onChangeFilterText }: SearchBar) {
   return (
-    <div className="search-bar">
+    <div className="search-bar" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
       <TextField
         filterText={filterText}
         label="검색"
