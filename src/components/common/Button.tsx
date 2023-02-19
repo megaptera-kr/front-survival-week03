@@ -1,10 +1,18 @@
 type ButtonProps = {
   label: string
+
+  onClick: () => void
+
 }
 
-function Button({ label }: ButtonProps) {
+function Button({ label, onClick }: ButtonProps) {
   return (
-    <button type="button">{label}</button>
+    <button
+      type="button"
+      onClick={onClick}
+    >
+      {label}
+    </button>
   );
 }
 
