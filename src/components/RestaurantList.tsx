@@ -14,7 +14,7 @@ type PropTypes = {
 
 export default function RestaurantList({ restaurantList = {}, filter = 'all', search = '' }:PropTypes) {
   let displayRestaurantList = filter === 'all' ? Object.values(restaurantList).flat() : restaurantList[filter];
-  if (search) {
+  if (search.trim()) {
     displayRestaurantList = getSearchResTaurantList(displayRestaurantList, search);
   }
   return (
