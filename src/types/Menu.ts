@@ -1,7 +1,7 @@
 interface Menu {
   id: string;
   name: string;
-  price: string;
+  price: number;
 }
 
 export default Menu;
