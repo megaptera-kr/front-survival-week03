@@ -1,5 +1,5 @@
 import Restaurant from '../types/Restaurant';
-import Menu from './Menu';
+import MenuInfo from './MenuInfo';
 
 type RestaurantRowProps = {
     restaurant: Restaurant
@@ -17,7 +17,7 @@ export default function RestaurantRow({ restaurant }: RestaurantRowProps) {
       <td>
         <ul>
           {restaurant.menus.map((menu) => (
-            <Menu
+            <MenuInfo
               key={menu.id}
               menu={menu}
             />
