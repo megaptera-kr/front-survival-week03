@@ -1,10 +1,10 @@
-import menu from './Menu';
+import Menu from './Menu';
 
 type Restaurant = {
     id:number;
     name:string;
     category:string;
-    menus: menu[];
+    menus: Menu[];
   }
 
 export default Restaurant;
