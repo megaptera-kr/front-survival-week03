@@ -1,0 +1,32 @@
+/* RestaurantCategoryFilter */
+.restaurant-filter-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 230px;
+}
+.restaurant-filter-item {
+  list-style: none;
+}
+
+/* RestaurantList */
+.restaurant-list {
+  padding: 0;
+  width: 400px;
+}
+
+.restaurant-item-title {
+  text-align: center;
+}
+.restaurant-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr;
+  align-items: center;
+}
+.restaurant-item:not(:first-child) {
+  margin-top: 20px;
+}
+.restaurant-item > span:not(:last-of-type) {
+  text-align: center;
+}
+
