@@ -32,7 +32,6 @@ module.exports = {
     'no-restricted-exports': 'off',
     indent: 'off',
     'operator-linebreak': 'off',
-    'comma-dangle': 'off',
     'no-trailing-spaces': 'error',
     curly: 'error',
     'brace-style': 'error',
