@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import { RestaurantType } from '../types/RestaurantType';
 
 export default function selcectCategories(

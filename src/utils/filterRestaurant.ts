@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 import { RestaurantType } from '../types/RestaurantType';
 
 type FilterConditionProps = {
