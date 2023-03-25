@@ -1,11 +1,11 @@
-import ProductCategoryRow from './ProductCategoryRow';
-import ProductRow from './ProductRow';
+import CategoryRow from './CategoryRow';
+import RestaurantsRow from './RestaurantsRow';
 
 function MenuTable() {
   return (
     <table>
-      <ProductCategoryRow />
-      <ProductRow />
+      <CategoryRow />
+      <RestaurantsRow />
     </table>
   );
 }

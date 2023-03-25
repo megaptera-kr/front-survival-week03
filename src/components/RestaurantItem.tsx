@@ -1,7 +1,7 @@
 import { Restaurants } from '../types/Restaurants';
 import MenuItem from './MenuItem';
 
-function ProductItem({ restaurant }: { restaurant: Restaurants }) {
+function RestaurantItem({ restaurant }: { restaurant: Restaurants }) {
   return (
     <tr className="ProductRow" key={restaurant.id}>
       <td>{restaurant.name}</td>
@@ -15,4 +15,4 @@ function ProductItem({ restaurant }: { restaurant: Restaurants }) {
   );
 }
 
-export default ProductItem;
+export default RestaurantItem;

@@ -1,4 +1,4 @@
-function ProductCategoryRow() {
+function CategoryRow() {
   return (
     <thead>
       <tr>
@@ -10,4 +10,4 @@ function ProductCategoryRow() {
   );
 }
 
-export default ProductCategoryRow;
+export default CategoryRow;
