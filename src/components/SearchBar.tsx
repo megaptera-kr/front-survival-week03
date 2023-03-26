@@ -1,11 +1,26 @@
 import TextField from './TextField';
 import Button from './Button';
 
-function SearchBar() {
+interface SearchBarProps {
+    filterText: string;
+    setFilterText: (value: string) => void;
+    filterMenu: any;
+    setFilterMenu: (value: any) => void;
+}
+
+function SearchBar({
+  filterText, setFilterText, filterMenu, setFilterMenu,
+}: SearchBarProps) {
   return (
     <>
-      <TextField />
-      <Button />
+      <TextField
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
+      <Button
+        filterMenu={filterMenu}
+        setFilterMenu={setFilterMenu}
+      />
     </>
   );
 }

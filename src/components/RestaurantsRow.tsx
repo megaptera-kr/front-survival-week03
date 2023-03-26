@@ -1,12 +1,13 @@
 import RestaurantItem from './RestaurantItem';
-import { restaurants } from '../../restaurants.json';
 
-function RestaurantsRow() {
+function RestaurantsRow({ filteredMenus }) {
   return (
     <tbody>
-      {restaurants.map((restaurant) => (
-        <RestaurantItem key={restaurant.name} restaurant={restaurant} />
-      ))}
+      {
+        filteredMenus.map((filteredMenu) => (
+          <RestaurantItem key={filteredMenu.name} restaurant={filteredMenu} />
+        ))
+      }
     </tbody>
   );
 }

@@ -1,11 +1,11 @@
 import CategoryRow from './CategoryRow';
 import RestaurantsRow from './RestaurantsRow';
 
-function MenuTable() {
+function MenuTable({ filteredMenus }) {
   return (
     <table>
       <CategoryRow />
-      <RestaurantsRow />
+      <RestaurantsRow filteredMenus={filteredMenus} />
     </table>
   );
 }
