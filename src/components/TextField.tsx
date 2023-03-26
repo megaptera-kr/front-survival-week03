@@ -1,10 +1,14 @@
 import { ChangeEvent } from "react";
 
 interface TextFieldProps {
+  label: string;
+  placeholder: string;
   restaurantName: string;
   setRestaurantName: (value: string) => void;
 }
 export default function TextField({
+  label,
+  placeholder,
   restaurantName,
   setRestaurantName,
 }: TextFieldProps) {
@@ -12,14 +16,17 @@ export default function TextField({
     const { value } = e.target;
     setRestaurantName(value);
   };
+
   return (
     <div className="search-bar">
-      <label htmlFor="search">검색</label>
+      <label htmlFor="search" style={{ paddingRight: "1rem" }}>
+        {label}
+      </label>
       <input
         id="search"
         type="text"
         value={restaurantName}
-        placeholder="식당이름"
+        placeholder={placeholder}
         onChange={handleChange}
       />
     </div>

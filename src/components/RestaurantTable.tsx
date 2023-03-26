@@ -1,23 +1,25 @@
-import json from "../../restaurants.json";
-import RestaurantTableBody from "./RestaurantTableBody";
-import RestaurantTableColumn from "./RestaurantTableColumn";
+import Restaurant from "../types/Restaurant";
+import RestaurantTableRow from "./RestaurantTableRow";
 
 interface RestaurantTableProps {
-  menuCategory: string;
-  restaurantName: string;
+  restaurants: Restaurant[];
 }
 
-export default function RestaurantTable({
-  menuCategory,
-  restaurantName,
-}: RestaurantTableProps) {
+export default function RestaurantTable({ restaurants }: RestaurantTableProps) {
   return (
     <table>
-      <RestaurantTableColumn />
-      <RestaurantTableBody
-        menuCategory={menuCategory}
-        restaurantName={restaurantName}
-      />
+      <thead>
+        <tr>
+          <th style={{ paddingInline: "2rem" }}>식당이름</th>
+          <th>종류</th>
+          <th>메뉴</th>
+        </tr>
+      </thead>
+      <tbody>
+        {restaurants.map((restaurant) => (
+          <RestaurantTableRow key={restaurant.id} restaurant={restaurant} />
+        ))}
+      </tbody>
     </table>
   );
 }

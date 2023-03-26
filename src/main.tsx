@@ -8,7 +8,6 @@ function main() {
     return;
   }
   const root = ReactDOM.createRoot(element);
-  // TODO: App 컴포넌트를 render 해주세요.
   root.render(<App />);
 }
 

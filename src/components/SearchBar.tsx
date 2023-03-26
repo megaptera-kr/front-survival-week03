@@ -1,13 +1,14 @@
-import ButtonArea from "./ButtonArea";
 import TextField from "./TextField";
 
 interface SearchBarProps {
+  categories: string[];
   restaurantName: string;
   setRestaurantName: (value: string) => void;
   setMenuCategory: (value: string) => void;
 }
 
 export default function SearchBar({
+  categories,
   restaurantName,
   setRestaurantName,
   setMenuCategory,
@@ -15,10 +16,20 @@ export default function SearchBar({
   return (
     <div>
       <TextField
+        label={"검색"}
+        placeholder="식당 이름"
         restaurantName={restaurantName}
         setRestaurantName={setRestaurantName}
       />
-      <ButtonArea setMenuCategory={setMenuCategory} />
+      <ul style={{ display: "flex", listStyle: "none", padding: "0px" }}>
+        {["전체", ...categories].map((category) => (
+          <li key={category} style={{ marginRight: "1rem" }}>
+            <button onClick={() => setMenuCategory(category)}>
+              {category}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
