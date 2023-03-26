@@ -1,20 +1,19 @@
 import Table from '../table/Table';
-import type { Restaurant, RestaurantFilter, RestaurantTableColumns } from '../../types/restaurants';
-import { restaurants } from '../../../restaurants.json';
+import RestaurantMenu from '../restaurantMenu/RestaurantMenu';
+
+import type { Restaurant, RestaurantTableColumns } from '../../types/restaurants';
 import { Columns } from '../../types/table';
-import { filterRestaurant } from '../../utils/filter';
 
 interface RestaurantTableProps {
-  filter: RestaurantFilter
+  restaurants: Restaurant[]
 }
 
-export default function ResturantTable({ filter }: RestaurantTableProps) {
+export default function ResturantTable({ restaurants }: RestaurantTableProps) {
   const columns: Columns<RestaurantTableColumns> = [
     { key: 'name', label: '식당이름' },
     { key: 'category', label: '종류' },
     { key: 'menu', label: '메뉴' },
   ];
-  const filteredData = filterRestaurant(restaurants, filter);
 
   const renderColumn = (data: Restaurant, key: RestaurantTableColumns) => {
     switch (key) {
@@ -22,19 +21,7 @@ export default function ResturantTable({ filter }: RestaurantTableProps) {
     case 'name':
       return data[key];
 
-    case 'menu': return (
-      <ul>
-        {data[key].map((food) => (
-          <li key={food.id}>
-            {food.name}
-            (
-            {food.price}
-            )
-            원
-          </li>
-        ))}
-      </ul>
-    );
+    case 'menu': return <RestaurantMenu menus={data[key]} />;
 
     default: {
       const exhaustiveCheck: never = key;
@@ -46,7 +33,7 @@ export default function ResturantTable({ filter }: RestaurantTableProps) {
   return (
     <Table columns={columns} title="식당 목록">
       <>
-        {filteredData.map((restaurant) => (
+        {restaurants.map((restaurant) => (
           <Table.Row key={restaurant.id}>
             {columns.map(({ key }) => (
               <Table.Cell key={key}>{renderColumn(restaurant, key)}</Table.Cell>

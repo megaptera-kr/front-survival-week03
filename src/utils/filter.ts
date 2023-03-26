@@ -10,11 +10,13 @@ export const filterRestaurantName = (restaurants: Restaurant[], name: string): R
 export const filterRestaurantCategory = (
   restaurants: Restaurant[],
   category: string,
-): Restaurant[] => restaurants.filter(
-  (restaurant) => !category || restaurant.category === category,
-);
+): Restaurant[] => {
+  const match = (restaurant: Restaurant) => restaurant.category === category;
+
+  return category === '전체' ? restaurants : restaurants.filter(match);
+};
 
 export const filterRestaurant = (
   restaurants: Restaurant[],
-  opt: RestaurantFilter,
-) => filterRestaurantCategory(filterRestaurantName(restaurants, opt.searchText), opt.category);
+  { searchText, category }: RestaurantFilter,
+) => filterRestaurantCategory(filterRestaurantName(restaurants, searchText), category);

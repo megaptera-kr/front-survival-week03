@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
-import SearchFilter from './components/searchFilter/SearchFilter';
-import ResturantTable from './components/restaurantTable/RestaurantTable';
+import FilterableRestaurantTable from './components/filterableRestaurantTable/FilterableRestaurantTable';
+
 import { RestaurantFilter } from './types/restaurants';
+
+import { restaurants } from '../restaurants.json';
 
 export default function App() {
   const [filter, setFilter] = useState<RestaurantFilter>({
@@ -22,12 +24,7 @@ export default function App() {
   return (
     <>
       <h1>오늘의 메뉴</h1>
-      <SearchFilter
-        searchText={filter.searchText}
-        onChangeSearchText={handleChangeSearchText}
-        onClickCategoryFilter={handleClickCategoryFilter}
-      />
-      <ResturantTable filter={filter} />
+      <FilterableRestaurantTable restaurants={restaurants} />
     </>
   );
 }
