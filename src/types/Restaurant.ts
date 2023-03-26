@@ -1,4 +1,5 @@
-import Food from "./Food";
+import Food from './Food';
+
 interface Restaurant {
   category: string;
   id: string;

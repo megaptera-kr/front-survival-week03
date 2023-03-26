@@ -1,5 +1,6 @@
-import FilterableRestaurantTable from "./components/FilterableRestaurantTable";
-import { restaurants } from "../restaurants.json";
+import FilterableRestaurantTable from './components/FilterableRestaurantTable';
+import { restaurants } from '../restaurants.json';
+
 export default function App() {
   return (
     <>

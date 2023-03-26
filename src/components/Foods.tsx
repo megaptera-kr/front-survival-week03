@@ -1,4 +1,4 @@
-import Food from "../types/Food";
+import Food from '../types/Food';
 
 interface FoodProps {
   menu: Food[];

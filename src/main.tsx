@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom/client";
-import { render } from "react-dom";
-import App from "./App";
+import ReactDOM from 'react-dom/client';
+import { render } from 'react-dom';
+import App from './App';
 
 function main() {
-  const element = document.getElementById("root");
+  const element = document.getElementById('root');
   if (!element) {
     return;
   }

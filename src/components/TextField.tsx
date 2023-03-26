@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
 interface TextFieldProps {
   label: string;
@@ -19,7 +19,7 @@ export default function TextField({
 
   return (
     <div className="search-bar">
-      <label htmlFor="search" style={{ paddingRight: "1rem" }}>
+      <label htmlFor="search" style={{ paddingRight: '1rem' }}>
         {label}
       </label>
       <input

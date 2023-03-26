@@ -1,4 +1,4 @@
-import TextField from "./TextField";
+import TextField from './TextField';
 
 interface SearchBarProps {
   categories: string[];
@@ -16,14 +16,14 @@ export default function SearchBar({
   return (
     <div>
       <TextField
-        label={"검색"}
+        label="검색"
         placeholder="식당 이름"
         restaurantName={restaurantName}
         setRestaurantName={setRestaurantName}
       />
-      <ul style={{ display: "flex", listStyle: "none", padding: "0px" }}>
-        {["전체", ...categories].map((category) => (
-          <li key={category} style={{ marginRight: "1rem" }}>
+      <ul style={{ display: 'flex', listStyle: 'none', padding: '0px' }}>
+        {['전체', ...categories].map((category) => (
+          <li key={category} style={{ marginRight: '1rem' }}>
             <button onClick={() => setMenuCategory(category)}>
               {category}
             </button>

@@ -1,5 +1,5 @@
-import Restaurant from "../types/Restaurant";
-import Foods from "./Foods";
+import Restaurant from '../types/Restaurant';
+import Foods from './Foods';
 
 interface RestaurantTableRowProps {
   restaurant: Restaurant;

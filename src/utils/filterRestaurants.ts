@@ -1,4 +1,4 @@
-import Restaurant from "../types/Restaurant";
+import Restaurant from '../types/Restaurant';
 
 function normalize(text: string) {
   return text.trim().toLocaleLowerCase();
@@ -11,13 +11,11 @@ type FilterConditions = {
 
 export default function filterRestaurants(
   restaurants: Restaurant[],
-  { restaurantName, menuCategory }: FilterConditions
+  { restaurantName, menuCategory }: FilterConditions,
 ): Restaurant[] {
-  const match = (restaurant: Restaurant) =>
-    restaurant.category === menuCategory;
+  const match = (restaurant: Restaurant) => restaurant.category === menuCategory;
 
-  const filteredRestaurants =
-    menuCategory === "전체" ? restaurants : restaurants.filter(match);
+  const filteredRestaurants = menuCategory === '전체' ? restaurants : restaurants.filter(match);
 
   const query = normalize(restaurantName);
 
@@ -25,8 +23,7 @@ export default function filterRestaurants(
     return filteredRestaurants;
   }
 
-  const contains = (restaurant: Restaurant) =>
-    normalize(restaurant.name).includes(query);
+  const contains = (restaurant: Restaurant) => normalize(restaurant.name).includes(query);
 
   return filteredRestaurants.filter(contains);
 }
