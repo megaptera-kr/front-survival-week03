@@ -1,7 +1,5 @@
 import FilterableMenuTable from './components/FilterableRestaurantsTable';
 
-// - 사용자는 입력한 식당 이름과 선택한 종류가 모두 일치하는 식당 목록만 골라 볼 수 있다.
-
 export default function App() {
   return (
     <div>

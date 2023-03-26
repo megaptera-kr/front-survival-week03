@@ -1,7 +1,12 @@
+import { Restaurants } from '../types/Restaurants';
 import CategoryRow from './CategoryRow';
 import RestaurantsRow from './RestaurantsRow';
 
-function MenuTable({ filteredMenus }) {
+interface MenuTableProps {
+    filteredMenus: Restaurants[];
+}
+
+function MenuTable({ filteredMenus }: MenuTableProps) {
   return (
     <table>
       <CategoryRow />

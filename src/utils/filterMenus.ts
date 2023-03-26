@@ -1,35 +1,31 @@
-import { restaurants } from '../../restaurants.json';
 import { Restaurants } from '../types/Restaurants';
 
 interface FilterConditions {
+    restaurants: Restaurants[];
     filterText: string;
     filterCategory: string;
 }
 
-function filterMenus({ filterText, filterCategory }: FilterConditions) {
+function filterMenus({ restaurants, filterText, filterCategory }: FilterConditions) {
   const query = filterText.trim();
 
-  if (!query && !filterCategory) {
-    return restaurants;
+  let filteredRestaurants = restaurants;
+
+  const filteredRestaurantsMenu = (filterCategoryName: string) => filteredRestaurants
+    .filter((filteredRestaurant) => filteredRestaurant.category === filterCategoryName);
+
+  const filteredRestaurantsName = (queryText: string) => filteredRestaurants
+    .filter((filteredRestaurant) => filteredRestaurant.name.includes(queryText));
+
+  if (filterCategory) {
+    filteredRestaurants = filteredRestaurantsMenu(filterCategory);
   }
 
-  const filteredMenus = restaurants.filter((restaurant) => filterCategory || restaurant);
-
-  const nameContains = (restaurant: Restaurants) => (
-    restaurant.name.includes(query)
-  );
-
-  const categoryContains = (restaurant: Restaurants) => (
-    restaurant.category.includes(filterCategory)
-  );
-
-  if (filterCategory === '전체') {
-    return restaurants;
+  if (query) {
+    filteredRestaurants = filteredRestaurantsName(query);
   }
 
-  const searchResult = filteredMenus.filter(nameContains) && filteredMenus.filter(categoryContains);
-
-  return searchResult;
+  return filteredRestaurants;
 }
 
 export default filterMenus;

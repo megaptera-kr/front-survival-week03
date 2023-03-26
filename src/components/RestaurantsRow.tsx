@@ -1,6 +1,11 @@
+import { Restaurants } from '../types/Restaurants';
 import RestaurantItem from './RestaurantItem';
 
-function RestaurantsRow({ filteredMenus }) {
+interface RestaurantsRowProps {
+  filteredMenus: Restaurants[];
+}
+
+function RestaurantsRow({ filteredMenus }: RestaurantsRowProps) {
   return (
     <tbody>
       {

@@ -1,30 +1,27 @@
-import React from 'react';
-
-const MenuButtons = ['전체', '중식', '한식', '일식'];
+const menuTypes = [
+  { name: '전체', value: '' },
+  { name: '중식', value: '중식' },
+  { name: '한식', value: '한식' },
+  { name: '일식', value: '일식' },
+];
 
 interface ButtonProps {
-    filterCategory: string;
-    setFilterCategory: (value: string) => void;
+  onClickMenuButton: (value: string) => void;
 }
 
-function Button({ filterCategory, setFilterCategory }: ButtonProps) {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const { name } = e.target;
-    setFilterCategory(name);
-  };
-
+function Button({ onClickMenuButton }: ButtonProps) {
   return (
     <div style={{ marginTop: 15, marginBottom: 15 }}>
-      {MenuButtons.map((menuButton) => (
+      {menuTypes.map((menuType) => (
         <button
           type="button"
-          key={menuButton}
-          name={menuButton}
+          key={menuType.name}
           style={{ marginRight: 15 }}
-          value={filterCategory}
-          onClick={handleClick}
+          onClick={() => {
+            onClickMenuButton(menuType.value);
+          }}
         >
-          {menuButton}
+          {menuType.name}
         </button>
       ))}
     </div>
