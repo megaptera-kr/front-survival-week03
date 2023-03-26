@@ -1,18 +1,38 @@
 import TextField from './TextField';
 
-export default function Search() {
+type SearchProps = {
+  valueText: string;
+  setValueText: (text: string) => void;
+  categories: string[];
+  setSelectCategory: (text: string) => void;
+}
+
+export default function Search({
+  valueText, setValueText, categories, setSelectCategory,
+}: SearchProps) {
   return (
     <div>
-      <TextField />
+      <TextField
+        label="검색"
+        placeholder="식당 이름"
+        valueText={valueText}
+        setValueText={setValueText}
+      />
 
       <div style={{
         display: 'flex', flexDirection: 'row', gap: '10px', margin: '10px 0',
       }}
       >
-        <button type="button">전체</button>
-        <button type="button">중식</button>
-        <button type="button">한식</button>
-        <button type="button">일식</button>
+        {['전체', ...categories].map((category: string) => (
+          <button
+            type="button"
+            key={category}
+            onClick={() => setSelectCategory(category)}
+          >
+            {category}
+          </button>
+
+        ))}
       </div>
     </div>
   );
