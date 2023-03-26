@@ -24,7 +24,7 @@ export default function SearchBar({
       <ul style={{ display: 'flex', listStyle: 'none', padding: '0px' }}>
         {['전체', ...categories].map((category) => (
           <li key={category} style={{ marginRight: '1rem' }}>
-            <button onClick={() => setMenuCategory(category)}>
+            <button type="button" onClick={() => setMenuCategory(category)}>
               {category}
             </button>
           </li>
