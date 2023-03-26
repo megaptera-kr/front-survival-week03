@@ -1,12 +1,20 @@
-export default function RestaurantMenuTable() {
+import RestaurantRow from './RestaurantRow';
+
+import Restaurant from '../types/Restaurant';
+
+type RestaurantMenuTableProps = {
+  restaurants: Restaurant[];
+};
+
+export default function RestaurantMenuTable({ restaurants }: RestaurantMenuTableProps) {
   return (
     <div>
       {/* 레스토랑&메뉴 테이블 */}
       <table>
         <colgroup>
           <col width={120} />
-          <col width={80} />
-          <col width={150} />
+          <col width={50} />
+          <col width={300} />
         </colgroup>
         <thead>
           <tr>
@@ -16,17 +24,12 @@ export default function RestaurantMenuTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>식당이름</td>
-            <td>종류</td>
-            <td>
-              <ul>
-                <li>메뉴1</li>
-                <li>메뉴2</li>
-                <li>메뉴3</li>
-              </ul>
-            </td>
-          </tr>
+          {restaurants.map((restaurant) => (
+            <RestaurantRow
+              key={restaurant.id}
+              restaurant={restaurant}
+            />
+          ))}
         </tbody>
       </table>
     </div>
