@@ -5,8 +5,7 @@ export default function App() {
   return (
     <>
       <h1>오늘의 메뉴</h1>
-      <RestaurantsMenuViewer restaurants = { restaurants }/>
+      <RestaurantsMenuViewer restaurants={restaurants} />
     </>
   );
 }
- 

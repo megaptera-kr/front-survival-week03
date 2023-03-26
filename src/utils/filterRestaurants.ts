@@ -1,6 +1,6 @@
 import Restaurant from '../types/Restaurant';
 
-function normalize(text: string) {
+function textNormalize(text: string) {
   return text.trim().toLocaleLowerCase();
 }
 
@@ -9,25 +9,22 @@ type filterStatus = {
   selectCategory: string;
 }
 
+// 셀렉트 된 카테고리만 필터해서 레스토랑리스트를 반환한다.
 export default function filterRestaurants(
   restaurants: Restaurant[],
   { filterText, selectCategory }: filterStatus,
 ): Restaurant[] {
-  const selecList = (restaurant: Restaurant) => (restaurant.category === filterCategory);
-
-  const filteredRestaurants = filterCategory === '전체'
+  const selecList = (restaurant: Restaurant) => (restaurant.category === selectCategory);
+  const filteredRestaurants = selectCategory === '전체'
     ? restaurants
-    : restaurants.filter(match);
+    : restaurants.filter(selecList);
 
-  const query = normalize(filterText);
+  const query = textNormalize(filterText);
+  const contains = (restaurant: Restaurant) => (textNormalize(restaurant.name).includes(query));
 
   if (!query) {
     return filteredRestaurants;
   }
-
-  const contains = (restaurant: Restaurant) => (
-    normalize(restaurant.name).includes(query)
-  );
 
   return filteredRestaurants.filter(contains);
 }
