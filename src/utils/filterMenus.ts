@@ -3,23 +3,33 @@ import { Restaurants } from '../types/Restaurants';
 
 interface FilterConditions {
     filterText: string;
-    filterMenu: any;
+    filterCategory: string;
 }
 
-function filterMenus({ filterText, filterMenu }: FilterConditions) {
+function filterMenus({ filterText, filterCategory }: FilterConditions) {
   const query = filterText.trim();
 
-  if (!query && !filterMenu) {
+  if (!query && !filterCategory) {
     return restaurants;
   }
 
-  const filteredMenus = restaurants.filter((restaurant) => filterMenu || restaurant);
+  const filteredMenus = restaurants.filter((restaurant) => filterCategory || restaurant);
 
-  const contains = (restaurant: Restaurants) => (
+  const nameContains = (restaurant: Restaurants) => (
     restaurant.name.includes(query)
   );
 
-  return filteredMenus.filter(contains);
+  const categoryContains = (restaurant: Restaurants) => (
+    restaurant.category.includes(filterCategory)
+  );
+
+  if (filterCategory === '전체') {
+    return restaurants;
+  }
+
+  const searchResult = filteredMenus.filter(nameContains) && filteredMenus.filter(categoryContains);
+
+  return searchResult;
 }
 
 export default filterMenus;

@@ -4,12 +4,12 @@ import Button from './Button';
 interface SearchBarProps {
     filterText: string;
     setFilterText: (value: string) => void;
-    filterMenu: any;
-    setFilterMenu: (value: any) => void;
+    filterCategory: string;
+    setFilterCategory: (value: string) => void;
 }
 
 function SearchBar({
-  filterText, setFilterText, filterMenu, setFilterMenu,
+  filterText, setFilterText, filterCategory, setFilterCategory,
 }: SearchBarProps) {
   return (
     <>
@@ -18,8 +18,8 @@ function SearchBar({
         setFilterText={setFilterText}
       />
       <Button
-        filterMenu={filterMenu}
-        setFilterMenu={setFilterMenu}
+        filterCategory={filterCategory}
+        setFilterCategory={setFilterCategory}
       />
     </>
   );

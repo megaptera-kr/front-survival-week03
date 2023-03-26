@@ -5,17 +5,17 @@ import filterMenus from '../utils/filterMenus';
 
 function FilterableMenuTable() {
   const [filterText, setFilterText] = useState('');
-  const [filterMenu, setFilterMenu] = useState('');
+  const [filterCategory, setFilterCategory] = useState('');
 
-  const filteredMenus = filterMenus({ filterText, filterMenu });
+  const filteredMenus = filterMenus({ filterText, filterCategory });
 
   return (
     <>
       <SearchBar
         filterText={filterText}
         setFilterText={setFilterText}
-        filterMenu={filterMenu}
-        setFilterMenu={setFilterMenu}
+        filterCategory={filterCategory}
+        setFilterCategory={setFilterCategory}
       />
       <MenuTable
         filteredMenus={filteredMenus}

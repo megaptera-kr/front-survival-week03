@@ -1,16 +1,16 @@
-import { ChangeEvent } from 'react';
+import React from 'react';
 
 const MenuButtons = ['전체', '중식', '한식', '일식'];
 
 interface ButtonProps {
-    filterMenu: any;
-    setFilterMenu: (value: any) => void;
+    filterCategory: string;
+    setFilterCategory: (value: string) => void;
 }
 
-function Button({ filterMenu, setFilterMenu }: ButtonProps) {
-  const handleClick = (e: ChangeEvent<HTMLButtonElement>) => {
+function Button({ filterCategory, setFilterCategory }: ButtonProps) {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target;
-    setFilterMenu();
+    setFilterCategory(name);
   };
 
   return (
@@ -21,6 +21,7 @@ function Button({ filterMenu, setFilterMenu }: ButtonProps) {
           key={menuButton}
           name={menuButton}
           style={{ marginRight: 15 }}
+          value={filterCategory}
           onClick={handleClick}
         >
           {menuButton}
