@@ -8,7 +8,7 @@ import { Category } from './types/type';
 export default function App() {
   const [restaurants, setRestaurants] = useState(data.restaurants);
 
-  const [categories, setCategories] = useState([
+  const [categories, setCategories] = useState<Category[]>([
     { id: '1', name: '전체', selected: true },
     { id: '2', name: '중식', selected: false },
     { id: '3', name: '한식', selected: false },
@@ -17,16 +17,30 @@ export default function App() {
 
   const [filterText, setFilterText] = useState(restaurants);
 
+  const [searchText, setSearchText] = useState('');
+
   const onToggleCategory = (categoryName: string) => {
+    const newCategories = categories.map((category) => ({
+      ...category,
+      selected: category.name === categoryName,
+    }));
+    setCategories(newCategories);
+
     const newFilterText = restaurants.filter((restaurant) => (
       categoryName === '전체'
-        ? data.restaurants
-        : restaurant.category.includes(categoryName)));
+        ? restaurant.name.includes(searchText)
+        : restaurant.category.includes(categoryName) && restaurant.name.includes(searchText)));
     setFilterText(newFilterText);
   };
 
   const onFilterTextChange = (text: string) => {
-    const newFilterText = restaurants.filter((restaurant) => restaurant.name.includes(text));
+    setSearchText(text);
+    const selectedCategory = categories.filter((category) => category.selected);
+    const categoryName = selectedCategory[0].name;
+    const newFilterText = categoryName === '전체'
+      ? (restaurants.filter((restaurant) => restaurant.name.includes(text)))
+      : (restaurants.filter((restaurant) => restaurant.name.includes(text)
+      && restaurant.category.includes(categoryName)));
     setFilterText(newFilterText);
   };
 
