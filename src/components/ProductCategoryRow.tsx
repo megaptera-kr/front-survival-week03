@@ -1,13 +1,13 @@
 type ProductCategoryRowProps = {
-  category: string;
-}
+	category: string;
+};
 
-export default function ProductCategoryRow({ category }: ProductCategoryRowProps) {
-  return (
-    <tr>
-      <th colSpan={2}>
-        {category}
-      </th>
-    </tr>
-  );
+export default function ProductCategoryRow({category}: ProductCategoryRowProps) {
+	return (
+		<tr>
+			<th colSpan={2}>
+				{category}
+			</th>
+		</tr>
+	);
 }
