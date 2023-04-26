@@ -6,6 +6,7 @@ import type Product from '../type/Product';
 import selectProduct from '../utils/selectProduct';
 
 type ProductsInCategoryProps = {
+	key: string;
 	category: string;
 	products: Product[];
 };

@@ -1,4 +1,4 @@
-import FilterableProductTable from './FilterableProductTable';
+import FilterableProductTable from './components/FilterableProductTable';
 
 import type Product from './type/Product';
 
@@ -25,6 +25,6 @@ const products: Product[] = [
 
 export default function App() {
 	return (
-		<FilterableProductTable products={products} />
+		<FilterableProductTable products={products} /> 
 	);
 }

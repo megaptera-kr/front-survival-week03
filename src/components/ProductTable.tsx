@@ -1,8 +1,8 @@
-import ProductsInCategory from './components/ProductsInCategory';
+import ProductsInCategory from './ProductsInCategory';
 
-import type Product from './type/Product';
+import type Product from '../type/Product';
 
-import selectCategories from './utils/selectCategories';
+import selectCategories from '../utils/selectCategories';
 
 type ProductTableProps = {
 	products: Product[];
