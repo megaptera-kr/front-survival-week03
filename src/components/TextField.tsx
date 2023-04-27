@@ -9,7 +9,7 @@ export default function TextField({placeholder}: TextFieldProps) {
 
 	const handleChange = (e: ChangeEvent) => {
 		const { value } = e.target;
-		console.log(value);
+		setFilterText(value);
 	};
 
 	return (
