@@ -1,7 +1,10 @@
+// import React from 'react';
+import FilterableStoreTable from './components/FilterableStoreTable';
+
+import { restaurants } from '../restaurants.json';
+
 export default function App() {
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <FilterableStoreTable restaurants={restaurants} />
   );
 }
