@@ -10,7 +10,7 @@ export default function ProductRow({product}: ProductRowProps) {
 		<tr>
 			<td>
 				<span style={{
-					color: product.stocked ? 'red' : 'black',
+					color: !product.stocked ? 'red' : 'black',
 				}}
 				>
 					{product.name}
