@@ -1,5 +1,3 @@
-import '../app.css';
-
 type ButtonBoxFieldProps = {
   category : string,
   setCategory : (value : string) => void
