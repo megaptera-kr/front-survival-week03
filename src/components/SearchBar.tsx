@@ -17,12 +17,11 @@ export default function SearchBar(
 
   return (
     <div>
-      {/* 눕혀야함 */}
-      <label htmlFor="restaurant-name">검색 </label>
+      <label htmlFor="input-검색">검색</label>
       <input
+        id="input-검색"
         type="text"
         placeholder="식당 이름"
-        name="resturant-name"
         value={filterText}
         onChange={handleTextChange}
       />
