@@ -2,10 +2,16 @@ import CategoryButton from './CategoryButton';
 
 type CategoryContainerProps = {
   categories : string[];
+  filterCategory: string;
+  setFilterCategory: (value:string) => void;
 }
 
 export default function CategoryContainer(
-  { categories } : CategoryContainerProps,
+  {
+    categories,
+    filterCategory,
+    setFilterCategory,
+  } : CategoryContainerProps,
 ) {
   return (
     <ul>

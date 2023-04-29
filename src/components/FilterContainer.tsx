@@ -3,15 +3,32 @@ import SearchBar from './SearchBar';
 
 type FilterContainerProps = {
   categories: string[];
+  filterText: string;
+  setFilterText: (value:string) => void;
+  filterCategory: string;
+  setFilterCategory: (value:string) => void;
 }
 
 export default function FilterContainer(
-  { categories } : FilterContainerProps,
+  {
+    categories,
+    filterText,
+    setFilterText,
+    filterCategory,
+    setFilterCategory,
+  } : FilterContainerProps,
 ) {
   return (
     <>
-      <SearchBar />
-      <CategoryContainer categories={categories} />
+      <SearchBar
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
+      <CategoryContainer
+        categories={categories}
+        filterCategory={filterCategory}
+        setFilterCategory={setFilterCategory}
+      />
     </>
   );
 }

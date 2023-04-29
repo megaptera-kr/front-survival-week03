@@ -1,4 +1,13 @@
-export default function SearchBar() {
+type SearchBarProps = {
+  filterText: string;
+  setFilterText: (value:string) => void;
+}
+export default function SearchBar(
+  {
+    filterText,
+    setFilterText,
+  }:SearchBarProps,
+) {
   return (
     <div>
       {/* 눕혀야함 */}
