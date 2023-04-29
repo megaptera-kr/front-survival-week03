@@ -5,7 +5,14 @@ type InputBarProps = {
     setFilterText: (value: string) => void;
   }
 
-export default function InputBar({ placeholder, label, filterText, setFilterText }: InputBarProps) {
+export default function InputBar(
+  {
+    placeholder,
+    label,
+    filterText,
+    setFilterText,
+  }: InputBarProps,
+) {
   const id = `${label}-검색`;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
