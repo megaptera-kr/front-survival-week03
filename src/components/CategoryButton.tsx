@@ -16,6 +16,15 @@ export default function CategoryButton(
   };
 
   return (
-    <li><button type="button" value={category} onClick={handleCategoryClick}>{category}</button></li>
+    <li>
+      <button
+        type="button"
+        value={category}
+        onClick={handleCategoryClick}
+        style={{ marginRight: '1rem' }}
+      >
+        {category}
+      </button>
+    </li>
   );
 }

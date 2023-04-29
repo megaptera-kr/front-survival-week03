@@ -12,7 +12,12 @@ export default function CategoryContainer(
   } : CategoryContainerProps,
 ) {
   return (
-    <ul>
+    <ul style={{
+      display: 'flex',
+      padding: '0px',
+      listStyle: 'none',
+    }}
+    >
       {categories.map((category) => (
         <CategoryButton
           key={category}
