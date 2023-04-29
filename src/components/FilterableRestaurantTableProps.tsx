@@ -13,8 +13,8 @@ type FilterableRestaurantTableProps = {
   }
 
 export default function FilterableRestaurantTable({ restaurants }: FilterableRestaurantTableProps) {
-  const [filterText, setFilterText] = useState('');
-  const [filterCategory, setfilterCategory] = useState('전체');
+  const [filterText, setFilterText] = useState<string>('');
+  const [filterCategory, setfilterCategory] = useState<string>('전체');
 
   const categories = selectCategoires(restaurants);
 
