@@ -18,7 +18,17 @@ export default function FilterableRestaurantMenu(
       arr.includes(restaurant.category)
         ? arr
         : [...arr, restaurant.category]
-    ), []);
+    ), ['전체']);
+
+  let filteredRestaurants = filterCategory && filterCategory !== '전체'
+    ? restaurants.filter((restaurant) => restaurant.category === filterCategory) : restaurants;
+  filteredRestaurants = !filterText
+    ? filteredRestaurants
+    : filteredRestaurants.filter(
+      (restaurant) => restaurant.name.trim().toLowerCase().includes(
+        filterText.trim().toLowerCase(),
+      ),
+    );
 
   return (
     <div>
@@ -27,10 +37,9 @@ export default function FilterableRestaurantMenu(
         categories={categories}
         filterText={filterText}
         setFilterText={setFilterText}
-        filterCategory={filterCategory}
         setFilterCategory={setFilterCategory}
       />
-      <RestaurantTable restaurants={restaurants} />
+      <RestaurantTable restaurants={filteredRestaurants} />
     </div>
   );
 }

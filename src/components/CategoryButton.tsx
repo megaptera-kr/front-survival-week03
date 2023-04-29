@@ -1,14 +1,21 @@
+import { MouseEvent } from 'react';
+
 type CategoryButtonProps = {
   category : string;
+  setFilterCategory: (value:string) => void;
 }
 export default function CategoryButton(
-  { category } : CategoryButtonProps,
+  {
+    category,
+    setFilterCategory,
+  } : CategoryButtonProps,
 ) {
-  const handleClick = () => {
-    console.log(`${category} clicked`);
+  const handleCategoryClick = (e : MouseEvent<HTMLButtonElement>) => {
+    const { value } = e.currentTarget;
+    setFilterCategory(value);
   };
 
   return (
-    <li><button type="button" onClick={handleClick}>{category}</button></li>
+    <li><button type="button" value={category} onClick={handleCategoryClick}>{category}</button></li>
   );
 }

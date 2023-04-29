@@ -5,7 +5,6 @@ type FilterContainerProps = {
   categories: string[];
   filterText: string;
   setFilterText: (value:string) => void;
-  filterCategory: string;
   setFilterCategory: (value:string) => void;
 }
 
@@ -14,7 +13,6 @@ export default function FilterContainer(
     categories,
     filterText,
     setFilterText,
-    filterCategory,
     setFilterCategory,
   } : FilterContainerProps,
 ) {
@@ -26,7 +24,6 @@ export default function FilterContainer(
       />
       <CategoryContainer
         categories={categories}
-        filterCategory={filterCategory}
         setFilterCategory={setFilterCategory}
       />
     </>
