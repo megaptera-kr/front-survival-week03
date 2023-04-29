@@ -27,7 +27,6 @@ export default function FilterableRestaurantTable({ restaurants }: FilterableRes
         filterText={filterText}
         setFilterText={setFilterText}
         categories={categories}
-        filterCategory={filterCategory}
         setfilterCategory={setfilterCategory}
       />
       <RestaurantTable restaurants={filteredRestaurants} />

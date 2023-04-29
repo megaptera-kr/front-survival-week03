@@ -1,16 +1,10 @@
-// type SelectCategoryProps = {
-// }
-
-import { useState } from 'react';
-
 type SelectCategoryProps = {
   categories: string[];
-  filterCategory: string;
   setfilterCategory: (value: string) => void;
 }
 
 export default function SelectCategory({
-  categories, filterCategory, setfilterCategory,
+  categories, setfilterCategory,
 }: SelectCategoryProps) {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const { value } = event.currentTarget;
