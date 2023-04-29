@@ -2,6 +2,8 @@ import { useState } from 'react';
 import type Restaurant from '../types/Restaurant';
 import RestaurantTable from './RestaurantTable';
 import FilterContainer from './FilterContainer';
+import filterRestaurants from '../utils/filterRestaurants';
+import selectCategories from '../utils/selectCategories';
 
 type FilterableRestaurantMenuProps = {
   restaurants : Restaurant[];
@@ -13,22 +15,11 @@ export default function FilterableRestaurantMenu(
   const [filterText, setFilterText] = useState<string>('');
   const [filterCategory, setFilterCategory] = useState<string>('');
 
-  const categories = restaurants
-    .reduce((arr:string[], restaurant:Restaurant) => (
-      arr.includes(restaurant.category)
-        ? arr
-        : [...arr, restaurant.category]
-    ), ['전체']);
+  const categories = selectCategories(restaurants);
 
-  let filteredRestaurants = filterCategory && filterCategory !== '전체'
-    ? restaurants.filter((restaurant) => restaurant.category === filterCategory) : restaurants;
-  filteredRestaurants = !filterText
-    ? filteredRestaurants
-    : filteredRestaurants.filter(
-      (restaurant) => restaurant.name.trim().toLowerCase().includes(
-        filterText.trim().toLowerCase(),
-      ),
-    );
+  const filteredRestaurants = filterRestaurants(restaurants, {
+    filterCategory, filterText,
+  });
 
   return (
     <div>
