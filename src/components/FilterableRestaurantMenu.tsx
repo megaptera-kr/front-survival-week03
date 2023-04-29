@@ -1,6 +1,6 @@
 import type Restaurant from '../types/Restaurant';
 import RestaurantTable from './RestaurantTable';
-import SearchBar from './SearchBar';
+import FilterContainer from './FilterContainer';
 
 type FilterableRestaurantMenuProps = {
   restaurants : Restaurant[];
@@ -19,7 +19,7 @@ export default function FilterableRestaurantMenu(
   return (
     <div>
       <h1>오늘의 메뉴</h1>
-      <SearchBar categories={categories} />
+      <FilterContainer categories={categories} />
       <RestaurantTable restaurants={restaurants} />
     </div>
   );
