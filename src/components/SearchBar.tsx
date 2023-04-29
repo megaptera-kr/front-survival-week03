@@ -1,4 +1,12 @@
-export default function SearchBar() {
+import CategoryButton from './CategoryButton';
+
+type SearchBarProps = {
+  categories: string[];
+}
+
+export default function SearchBar(
+  { categories } : SearchBarProps,
+) {
   return (
     <>
       {/* 눕혀야함 */}
@@ -8,10 +16,10 @@ export default function SearchBar() {
       </div>
       {/* Category iterate */}
       <ul>
-        <li><button type="button">전체</button></li>
-        <li><button type="button">중식</button></li>
-        <li><button type="button">한식</button></li>
-        <li><button type="button">일식</button></li>
+        <CategoryButton key="전체" category="전체" />
+        {categories.map((category) => (
+          <CategoryButton key={category} category={category} />
+        ))}
       </ul>
     </>
   );
