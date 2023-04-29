@@ -1,5 +1,4 @@
 import type Restaurant from '../types/Restaurant';
-import RestaurantHeader from './RestaurantHeader';
 import RestaurantRow from './RestaurantRow';
 
 type RestaurantTableProps = {
@@ -11,7 +10,13 @@ export default function RestaurantTable(
 ) {
   return (
     <table>
-      <RestaurantHeader />
+      <thead>
+        <tr>
+          <th>식당 이름</th>
+          <th>종류</th>
+          <th>메뉴</th>
+        </tr>
+      </thead>
       <tbody>
         {restaurants.map((restaurant) => (
           <RestaurantRow
