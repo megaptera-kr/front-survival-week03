@@ -22,9 +22,11 @@ function ProductTable({ data, filterType, keyword }: props) {
 
   return (
     <section>
-      <div>식당 이름</div>
-      <div>종류</div>
-      <div>메뉴</div>
+      <div className="flex gap-8 text-base font-bold">
+        <div className="w-24">식당 이름</div>
+        <div className="w-24">종류</div>
+        <div className="w-24">메뉴</div>
+      </div>
       <ProductRow data={filteredData} />
     </section>
   );

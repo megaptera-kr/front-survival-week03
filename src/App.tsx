@@ -17,7 +17,11 @@ export default function App() {
     <>
       <Title />
       <SearchBar setKeyword={setKeyword} />
-      <FilterButton data={FILTER_LIST} setFilterType={setFilterType} />
+      <FilterButton
+        data={FILTER_LIST}
+        filterType={filterType}
+        setFilterType={setFilterType}
+      />
       <ProductTable
         data={restaurants}
         filterType={filterType}
