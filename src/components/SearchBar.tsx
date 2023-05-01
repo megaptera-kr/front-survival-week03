@@ -10,7 +10,8 @@ function SearchBar({ setKeyword }: props) {
         <input
           className="border-solid border border-slate-600"
           type="text"
-          onChange={(e) => setKeyword(e.target.value)}
+          name="검색"
+          onChange={(e) => setKeyword(e.target.value.trim())}
           placeholder="식당 이름"
         />
       </div>
