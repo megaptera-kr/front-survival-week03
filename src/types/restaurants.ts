@@ -10,7 +10,3 @@ type Restaurant = {
   name: string;
   menu: Menu[];
 };
-
-type RestaurantList = {
-  restaurants: Restaurant[];
-};
