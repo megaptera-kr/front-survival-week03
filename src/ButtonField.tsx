@@ -4,18 +4,20 @@ type ButtonFieldProps = {
     setButtonClicked: (value : string) => void;
 }
 
-export default function ButtonField({ buttonValue, buttonClicked, setButtonClicked }: ButtonFieldProps) {
+// const asdf = { buttonValue, buttonClicked, setButtonCLicked }
+
+export default function ButtonField(
+  { buttonValue, buttonClicked, setButtonClicked }: ButtonFieldProps,
+) {
   const handleClick = () => {
     if (buttonValue === '전체') {
       console.log(`${buttonValue} clicked!`);
 
-      setButtonClicked(buttonClicked = buttonValue);
-      console.log(buttonClicked);
+      setButtonClicked(buttonValue);
     } else {
       console.log(`${buttonValue} clicked!`);
 
-      setButtonClicked(buttonClicked = buttonValue);
-      console.log(buttonClicked);
+      setButtonClicked(buttonValue);
     }
   };
 

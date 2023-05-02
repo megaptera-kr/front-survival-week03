@@ -11,7 +11,9 @@ export default function FilterableProductTable() {
 
   const [buttonClicked, setButtonClicked] = useState<string>('');
 
-  const filteredRestaurants = (lorr.filter((rstr) => rstr.name.includes(filterText.trim())).filter((rstr) => !buttonClicked
+  const query = lorr.filter((rstr) => rstr.name.includes(filterText.trim()));
+
+  const filteredRestaurants = (query.filter((rstr) => !buttonClicked
   || buttonClicked === '전체'
   || rstr.category === buttonClicked)
   );
