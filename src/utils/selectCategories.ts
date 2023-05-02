@@ -1,6 +1,6 @@
 import data from '../../restaurants.json';
 
-import { Data } from '../types';
+import { Data } from '../types/types';
 
 export default function selectCategories():string[] {
   const { restaurants } = data as Data;

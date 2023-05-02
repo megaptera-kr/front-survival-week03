@@ -1,4 +1,4 @@
-import { Restaurant } from '../types';
+import { Restaurant } from '../types/types';
 
 type FilterConditions = {
   filterText: string;
