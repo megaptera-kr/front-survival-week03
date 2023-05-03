@@ -1,7 +1,20 @@
+import { useState } from 'react';
+import CategorySelectionButtons from './components/CategorySelectionButtons';
+import Header from './components/Header';
+import FilterableRestaurantsTable from './components/FilterableRestaurantsTable';
+import data from '../restaurants.json';
+
+import { Data } from './types';
+
 export default function App() {
+  const { restaurants } = data as Data;
+
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <div>
+      <Header />
+      <FilterableRestaurantsTable
+        restaurants={restaurants}
+      />
+    </div>
   );
 }
