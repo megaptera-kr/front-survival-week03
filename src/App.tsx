@@ -1,7 +1,21 @@
+import restaurantsData from '../restaurants.json';
+
+import selectCategories from './utils/selectCategories';
+
+import Header from './components/common/Header';
+import FilterableRestaurantsTables from './components/FilterableRestaurantsTable';
+
 export default function App() {
+  const { restaurants } = restaurantsData;
+  const categories: string[] = selectCategories(restaurants);
+
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <>
+      <Header />
+      <FilterableRestaurantsTables
+        categories={categories}
+        restaurants={restaurants}
+      />
+    </>
   );
 }
