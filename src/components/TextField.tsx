@@ -27,6 +27,7 @@ export default function TextField({
         {label}
       </label>
       <input
+        id={id}
         type="text"
         placeholder={placeholder}
         value={searchText}
