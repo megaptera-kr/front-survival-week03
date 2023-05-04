@@ -22,7 +22,7 @@ export default function TextField({
     <div>
       <label
         htmlFor={id}
-        className="inputSearchcs"
+        className="inputSearch"
       >
         {label}
       </label>

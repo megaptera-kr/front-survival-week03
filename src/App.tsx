@@ -8,8 +8,6 @@ const restaurant = restaurants.restaurants;
 
 export default function App() {
   return (
-    /* 토탈 메뉴
-    */
     <TotalMenu restaurant={restaurant} />
   );
 }
