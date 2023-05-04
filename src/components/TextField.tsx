@@ -1,5 +1,3 @@
-import '../App.css';
-
 import React from 'react';
 
 type TextFieldProps = {
@@ -22,7 +20,9 @@ export default function TextField({
     <div>
       <label
         htmlFor={id}
-        className="inputSearch"
+        style={{
+          paddingRight: '1rem',
+        }}
       >
         {label}
       </label>

@@ -1,5 +1,3 @@
-import '../App.css';
-
 type NavBarInCategoryProps = {
     foodCategory: string[];
     setClickCategory: (value: string) => void;
@@ -8,9 +6,19 @@ type NavBarInCategoryProps = {
 export default function NavBarInCategory({ foodCategory, setClickCategory }
     : NavBarInCategoryProps) {
   return (
-    <ul className="menuSelect">
+    <ul style={{
+      display: 'flex',
+      padding: 0,
+      listStyle: 'none',
+    }}
+    >
       {foodCategory.map((category: string) => (
-        <li key={category} className="menuButton">
+        <li
+          key={category}
+          style={{
+            marginRight: '1rem',
+          }}
+        >
           <button
             type="button"
             onClick={() => { setClickCategory(category); }}

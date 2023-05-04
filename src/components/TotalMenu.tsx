@@ -1,9 +1,7 @@
-import '../App.css';
-
 import { useState } from 'react';
-import MenuHeader from './MenuHeader';
+
 import NavBar from './NavBar';
-import RestaurantsInCategory from './RestaurantsInCategory';
+import RestaurantTable from './RestaurantTable';
 
 import Restaurant from '../types/Restaurant';
 
@@ -23,26 +21,14 @@ export default function TotalMenu({ restaurant }: TotalMenuProps) {
   const filteredResFood = filterResFood({ clickCategory, searchText }, restaurant);
 
   return (
-    <>
-      <h1>오늘의 메뉴</h1>
-      <div className="TotalMenu">
-        <NavBar
-          foodCategory={foodCategory}
-          searchText={searchText}
-          setSearchText={setSearchText}
-          setClickCategory={setClickCategory}
-        />
-        <div>
-          <table>
-            <thead>
-              <MenuHeader />
-            </thead>
-            <tbody>
-              <RestaurantsInCategory restaurant={filteredResFood} />
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
+    <div>
+      <NavBar
+        foodCategory={foodCategory}
+        searchText={searchText}
+        setSearchText={setSearchText}
+        setClickCategory={setClickCategory}
+      />
+      <RestaurantTable filteredResFood={filteredResFood} />
+    </div>
   );
 }

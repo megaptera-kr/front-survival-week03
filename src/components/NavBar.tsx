@@ -1,4 +1,3 @@
-import '../App.css';
 import NavBarInCategory from './NavBarInCategory';
 import TextField from './TextField';
 
@@ -13,7 +12,7 @@ export default function NavBar({
   foodCategory, searchText, setSearchText, setClickCategory,
 }: NavBarProps) {
   return (
-    <div className="navBar">
+    <div>
       <TextField
         label="검색"
         placeholder="식당 이름"
