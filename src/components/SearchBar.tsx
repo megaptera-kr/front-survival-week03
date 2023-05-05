@@ -1,33 +1,14 @@
 import TextField from './TextField';
-import CheckBoxField from './CheckBoxField';
+import ButtonField from './ButtonField';
 
-type searchBarProps = {
-	filterText: string;
-	setFilterText: (value: string) => void;
-	inStockOnly: boolean;
-	setInStockOnly: (value: boolean) => void;
-};
-
-export default function SearchBar({ filterText, setFilterText, inStockOnly, setInStockOnly }: searchBarProps) {
+export default function SearchBar() {
 	return (
 		<div className='filterableProductTable'>
-			<div className='searchBar'>
-				<TextField
-					placeholder="Search..."
-					filterText={filterText}
-					setFilterText={setFilterText}
-				/>
-				<CheckBoxField
-					label='Only show products in stock'
-					inStockOnly={inStockOnly}
-					setInStockOnly={setInStockOnly}
-				/>
-				<CheckBoxField
-					label='Only show products over $10'
-					inStockOnly={inStockOnly}
-					setInStockOnly={setInStockOnly}
-				/>
-			</div>
+			<TextField placeholder='식당 이름'/>
+			<ButtonField value='전체'/>
+			<ButtonField value='중식'/>
+			<ButtonField value='한식'/>
+			<ButtonField value='일식'/>
 		</div>
 	);
 }

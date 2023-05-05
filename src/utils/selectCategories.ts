@@ -1,4 +1,4 @@
-import type Product from '../type/Product';
+import type Product from '../type/Restaurant';
 
 export default function selectCategories(products: Product[]): string[] {
 	return products.reduce((acc: string[], product: Product) => {

@@ -1,4 +1,4 @@
-import type Product from '../type/Product';
+import type Product from '../type/Restaurant';
 
 export default function selectProduct(
 	items: Product[],
