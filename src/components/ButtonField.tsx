@@ -2,17 +2,16 @@ import { useState } from "react";
 
 type ButtonFieldProps = {
 	value: string;
+	btnValue: string;
+	setBtnValue: (value: string) => void;
 };
 
-export default function ButtonField({ value }: ButtonFieldProps) {
-	const [btnValue, setBtnValue] = useState(value);
-
+export default function ButtonField({ value, btnValue, setBtnValue }: ButtonFieldProps) {
 	const handleClick = (e) => {
 		setBtnValue(e.target.value);
-		console.log(btnValue);
 	}
 
 	return (
-		<button type='button' value={btnValue} onClick={handleClick}>{btnValue}</button>
+		<button type='button' value={value} onClick={handleClick}>{value}</button>
 	);
 }
