@@ -1,5 +1,5 @@
-import Restaurant from "../type/Restaurant";
-import RestaurantRow from "./RestaurantRow";
+import type Restaurant from '../type/Restaurant';
+import RestaurantRow from './RestaurantRow';
 
 type RestaurantTableProps = {
 	restaurants: Restaurant[];
@@ -16,7 +16,7 @@ export default function RestaurantTable({restaurants}: RestaurantTableProps) {
 				</tr>
 			</thead>
 			<tbody>
-				{restaurants.map((restaurant) => (
+				{restaurants.map(restaurant => (
 					<RestaurantRow restaurant={restaurant}/>
 				))}
 			</tbody>

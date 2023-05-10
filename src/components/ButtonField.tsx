@@ -8,6 +8,8 @@ type ButtonFieldProps = {
 
 export default function ButtonField({value, btnValue, setBtnValue}: ButtonFieldProps) {
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		console.log(e.target);
+		console.log(e.target.value);
 		setBtnValue(e.target.value);
 	};
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable new-cap */
 Feature('과제 테스트');
 
 Scenario('메뉴판 필터링', ({I}) => {

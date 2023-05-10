@@ -1,10 +1,10 @@
-import Menu from "./Menu";
+import type Menu from './Menu';
 
 type Restaurant = {
-	"id": string,
-	"category": string,
-	"name": string,
-	"menu": Menu[]
-  }
+	'id': string;
+	'category': string;
+	'name': string;
+	'menu': Menu[];
+};
 
 export default Restaurant;

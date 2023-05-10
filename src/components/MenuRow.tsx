@@ -1,4 +1,4 @@
-import Menu from '../type/Menu';
+import type Menu from '../type/Menu';
 
 type MenuRowProps = {
 	menus: Menu[];
@@ -7,7 +7,7 @@ type MenuRowProps = {
 export default function MenuRow({menus}: MenuRowProps) {
 	return (
 		<ul>
-			{menus.map((food) => (
+			{menus.map(food => (
 				<li>{food.name}</li>
 			))}
 		</ul>
