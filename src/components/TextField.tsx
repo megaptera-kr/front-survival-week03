@@ -4,17 +4,16 @@ type TextFieldProps = {
 	setTextValue: (value: string) => void;
 };
 
-export default function TextField({ placeholder, textValue, setTextValue }: TextFieldProps) {
-
-	const handleText = (e) => {
-		setTextValue(e.target.value);
+export default function TextField({placeholder, textValue, setTextValue}: TextFieldProps) {
+	const handleText = e => {
+		setTextValue(e.target.value.trim());
 		console.log(textValue);
 	};
 
 	return (
 		<div>
-			<span>검색</span>
-			<input type='text' placeholder={placeholder} onChange={handleText}/>
+			<label htmlFor='search'>검색</label>
+			<input type='text' placeholder={placeholder} onChange={handleText} id='search'/>
 		</div>
 	);
 }
