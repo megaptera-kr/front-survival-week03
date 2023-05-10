@@ -5,7 +5,7 @@ type TextFieldProps = {
 };
 
 export default function TextField({placeholder, textValue, setTextValue}: TextFieldProps) {
-	const handleText = e => {
+	const handleText = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTextValue(e.target.value.trim());
 		console.log(textValue);
 	};
