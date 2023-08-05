@@ -6,14 +6,6 @@ type RestaurantsTableProps = {
 }
 
 export default function RestaurantsTable({ restaurants }: RestaurantsTableProps) {
-  const isEmpty = restaurants.length === 0;
-
-  if (isEmpty) {
-    return (
-      <span>텅~</span>
-    );
-  }
-
   return (
     <table>
       <thead>
@@ -24,7 +16,7 @@ export default function RestaurantsTable({ restaurants }: RestaurantsTableProps)
         </tr>
       </thead>
       <tbody>
-        {restaurants.map((restaurantItem) => (
+        {restaurants?.map((restaurantItem) => (
           <RestaurantsItem key={restaurantItem.id} restaurant={restaurantItem} />
         ))}
       </tbody>
