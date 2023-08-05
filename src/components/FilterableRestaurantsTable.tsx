@@ -1,9 +1,13 @@
 import RestaurantsTable from './RestaurantsTable';
 
 import { restaurants } from '../../restaurants.json';
+import SearchBar from './SearchBar';
 
 export default function FilterableRestaurantsTable() {
   return (
-    <RestaurantsTable restaurants={restaurants} />
+    <>
+      <SearchBar />
+      <RestaurantsTable restaurants={restaurants} />
+    </>
   );
 }
