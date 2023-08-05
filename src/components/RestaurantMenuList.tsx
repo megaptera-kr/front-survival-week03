@@ -4,7 +4,7 @@ type RestaurantMeneProps = {
     restaurantMenu: RestaurantMenu;
   }
 
-export default function RestaurantMenu({ restaurantMenu }:RestaurantMeneProps) {
+export default function RestaurantMenuList({ restaurantMenu }:RestaurantMeneProps) {
   return (
     <ul>
       <li key={restaurantMenu.id}>
