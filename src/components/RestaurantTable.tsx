@@ -20,12 +20,14 @@ export default function RestaurantTable({ restaurantsData }: RestaurantTableProp
           <tr key={restaurant.id}>
             <td>{restaurant.name}</td>
             <td>{restaurant.category}</td>
-            {restaurant.menu.map((restaurantMenu:RestaurantMenu) => (
-              <RestaurantMenuList
-                key={restaurantMenu.id}
-                restaurantMenu={restaurantMenu}
-              />
-            ))}
+            <td>
+              {restaurant.menu.map((restaurantMenu:RestaurantMenu) => (
+                <RestaurantMenuList
+                  key={restaurantMenu.id}
+                  restaurantMenu={restaurantMenu}
+                />
+              ))}
+            </td>
           </tr>
         ))}
       </tbody>
