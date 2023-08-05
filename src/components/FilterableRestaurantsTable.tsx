@@ -4,6 +4,7 @@ import RestaurantsTable from './RestaurantsTable';
 import { restaurants } from '../../restaurants.json';
 import SearchBar from './SearchBar';
 import selectCategories from '../utils/selectCategories';
+import filterRestaurants from '../utils/filterRestaurants';
 
 export default function FilterableRestaurantsTable() {
   const categories = selectCategories(restaurants);
@@ -18,8 +19,10 @@ export default function FilterableRestaurantsTable() {
     setSelectedCategory(category);
   };
 
-  const filteredRestaurants = restaurants
-    .filter((restaurant) => restaurant.name.includes(searchText));
+  const filteredRestaurants = filterRestaurants(restaurants, {
+    searchText,
+    selectedCategory,
+  });
 
   return (
     <>
