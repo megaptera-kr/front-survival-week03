@@ -23,7 +23,9 @@ function MenuList({ data }: Props) {
     <div>
       <table>
         <thead>
-          {HEADERS.map(({ name, value }) => <th key={`${value}_header`}>{name}</th>)}
+          <tr>
+            {HEADERS.map(({ name, value }) => <th key={`${value}_header`}>{name}</th>)}
+          </tr>
         </thead>
         <tbody>
           {data.map(({

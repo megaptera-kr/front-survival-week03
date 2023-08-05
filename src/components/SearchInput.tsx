@@ -4,11 +4,10 @@ import debounce from '../utils/debounce';
 
 type Props = {
     label?: string;
-    placeholder?: string
     onChange?: (value: string) => void;
 }
 
-function SearchInput({ label, placeholder, onChange }: Props) {
+function SearchInput({ label, onChange }: Props) {
   const [innerValue, setInnerValue] = useState('');
 
   const debouncedChange = useCallback(debounce<string>((value: string) => {
@@ -29,7 +28,7 @@ function SearchInput({ label, placeholder, onChange }: Props) {
     }}
     >
       {label}
-      <input type="text" placeholder={placeholder} value={innerValue} onChange={handleChange} />
+      <input type="text" value={innerValue} onChange={handleChange} />
     </label>
   );
 }
