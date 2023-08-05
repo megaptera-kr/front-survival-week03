@@ -3,11 +3,10 @@ import { MouseEvent } from 'react';
 const Btns = ['전체', '중식', '한식', '일식'];
 
 type ButtonsProps = {
-  foodType: string;
   setFoodType: (value: string) => void;
 }
 
-function Buttons({ foodType, setFoodType }: ButtonsProps) {
+function Buttons({ setFoodType }: ButtonsProps) {
   const handleClickBtn = (e: MouseEvent<HTMLElement>) => {
     const { value } = e.target as HTMLButtonElement;
     setFoodType(value);

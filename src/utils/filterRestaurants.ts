@@ -14,6 +14,6 @@ export default function filterRestaurants(
   }
 
   return filteredRestaurants.filter(
-    (restaurant) => restaurant.name.includes(query),
+    (restaurant) => restaurant.name.includes(query.trim()),
   );
 }

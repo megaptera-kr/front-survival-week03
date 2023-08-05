@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 
 import dummy from '../../restaurants.json';
 
-import type { Restaurant, RestaurantFilterConditions } from '../types/restaurants';
+import type { Restaurant } from '../types/restaurants';
 import filterRestaurants from '../utils/filterRestaurants';
 
 const { restaurants }: {restaurants: Restaurant[]} = dummy;
@@ -16,7 +16,6 @@ function FilterableRestaurantTable() {
   const filteredRestaurents = filterRestaurants(restaurants, {
     query, foodType,
   });
-  console.log(foodType);
 
   return (
     <div>
