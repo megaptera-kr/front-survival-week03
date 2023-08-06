@@ -10,7 +10,7 @@ export default function App() {
 
   const filteredRestaurants = restaurantData.filter((item) => {
     const isCategoryMatch = category === '전체' || item.category === category;
-    const isNameMatch = item.name.includes(filterText);
+    const isNameMatch = item.name.includes(filterText.trim());
 
     return isCategoryMatch && isNameMatch;
   });
