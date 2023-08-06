@@ -1,6 +1,6 @@
 import { Restaurant } from '../types';
 
-export type RestaurantsProps = Restaurant[];
+type RestaurantsProps = Restaurant[];
 
 export default function Restaurants({
   restaurants,

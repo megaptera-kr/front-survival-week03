@@ -10,3 +10,8 @@ export type Restaurant = {
   name: string;
   menu: Menu[];
 };
+
+export type CategoryGroupProps = {
+  categories: string[];
+  setCategory: (category: string) => void;
+};
