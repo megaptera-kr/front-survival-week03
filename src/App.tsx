@@ -1,7 +1,11 @@
-export default function App() {
+import TodayMenuPage from './pages/TodayMenuPage/TodayMenuPage';
+
+function App() {
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <div>
+      <TodayMenuPage />
+    </div>
   );
 }
+
+export default App;
