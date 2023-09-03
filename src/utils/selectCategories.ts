@@ -1,8 +1,9 @@
-import Product from '../types/Product';
+import Restaurant from '../types/Restaurant';
 
-export default function selectCategories(products: Product[]): string[] {
-  return products.reduce((acc: string[], product: Product) => {
-    const { category } = product;
+export default function selectCategories(restaurants: Restaurant[]): string[] {
+  return restaurants.reduce((acc: string[], restaurant: Restaurant) => {
+    const { category } = restaurant;
+
     return acc.includes(category) ? acc : [...acc, category];
   }, []);
 }

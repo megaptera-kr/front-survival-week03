@@ -1,28 +1,45 @@
 import TextField from './TextField';
-import CheckBoxField from './CheckBoxField';
 
 type SearchBarProps = {
+  categories: string[];
   filterText: string;
-  setFilterText: (value: string) => void;
-  inStockOnly: boolean;
-  setInStockOnly: (value: boolean) => void;
+  setFilterText: (text: string) => void;
+  setFilterCategory: (text: string) => void;
 }
 
-export default function searchBar({
-  filterText, setFilterText, inStockOnly, setInStockOnly,
+export default function SearchBar({
+  categories, filterText, setFilterText, setFilterCategory,
 }: SearchBarProps) {
   return (
-    <div className="search-bar">
+    <div>
       <TextField
-        placeholder="Search..."
+        label="검색"
+        placeholder="식당 이름"
         filterText={filterText}
         setFilterText={setFilterText}
       />
-      <CheckBoxField
-        label="Only show products in stock"
-        inStockOnly={inStockOnly}
-        setInStockOnly={setInStockOnly}
-      />
+      <ul style={{
+        display: 'flex',
+        padding: 0,
+        listStyle: 'none',
+      }}
+      >
+        {['전체', ...categories].map((category: string) => (
+          <li
+            key={category}
+            style={{
+              marginRight: '1rem',
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => setFilterCategory(category)}
+            >
+              {category}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
