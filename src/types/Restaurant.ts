@@ -5,4 +5,4 @@ export default interface Restaurant {
   category: string;
   name: string;
   menu: Menu[];
-}
+};
