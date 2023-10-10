@@ -1,7 +1,11 @@
+import restaurants from '../restaurants.json';
+import FilterableRestaurantTable from './components/FilterableRestaurantTable';
+
 export default function App() {
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <div>
+      <h1>오늘의 메뉴</h1>
+      <FilterableRestaurantTable restaurants={restaurants.restaurants} />
+    </div>
   );
 }
