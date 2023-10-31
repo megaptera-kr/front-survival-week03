@@ -1,0 +1,69 @@
+html,
+body,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.search-form {
+	display: flex;
+	gap: 5px;
+}
+
+.categories {
+	margin: 10px 0;
+	display: flex;
+	gap: 10px;
+}
+
+.categories .is-active {
+	background: #000;
+	color: #fff;
+}
+
+.restaurants-table {
+	border-collapse: collapse;
+}
+
+.restaurants-table th {
+	background: #bebebe;
+}
+
+.restaurants-table th,
+.restaurants-table td {
+	border: 1px solid #e0e0e0;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.restaurants-table .category {
+	width: 50px;
+}
+
+.restaurants-table .store-name {
+	width: 120px;
+}
+
+.restaurants-table .menu {
+	width: 200px;
+}
+
+.restaurants-table .menu-list {
+	text-align: left;
+}
+
+.menu-list ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menu-list ul li {
+	display: flex;
+	gap: 8px;
+	flex: 1 1 100%;
+}
