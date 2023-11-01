@@ -6,13 +6,14 @@ import FilterableMenuTable from './FilterableMenuTable';
 
 import useInput from '../hooks/useInput';
 import useFilter from '../hooks/useFilter';
+import useDebounce from '../hooks/useDebounce';
 
 import data from '../../restaurants.json';
 
 import { RestaurantsItem } from '../types/restaurantItemType';
+
 import select from '../utils/select';
 import filterByName from '../utils/filterBySearchText';
-import useDebounce from '../hooks/useDebounce';
 
 export default function FilterableMenuContainer() {
   const { searchText, handleChangeSearchText } = useInput();

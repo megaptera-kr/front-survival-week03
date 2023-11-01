@@ -1,5 +1,4 @@
 import FilterableMenuTableHead from './FIlterableMenuTableHead';
-
 import FilterableMenuTableBody from './FilterableMenuTableBody';
 
 import { RestaurantItem } from '../types/restaurantItemType';

@@ -1,5 +1,6 @@
-import { RestaurantItem } from '../types/restaurantItemType';
 import FilterableMenuTableRow from './FilterableMenuTableRow';
+
+import { RestaurantItem } from '../types/restaurantItemType';
 
 type FilterableMenuTableProps = {
   restaurants: RestaurantItem[];

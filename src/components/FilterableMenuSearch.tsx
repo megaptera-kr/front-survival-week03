@@ -1,7 +1,6 @@
 type FilterableMenuSearchProps = {
   htmlFor: string;
   placeholder: string;
-
   searchText: string;
   handleChangeSearchText: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
