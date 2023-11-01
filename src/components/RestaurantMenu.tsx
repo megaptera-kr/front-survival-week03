@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu } from '../type/Restaurants';
 
 export default function RestaurantMenu({ menus }: { menus: Menu[] }) {

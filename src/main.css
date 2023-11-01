@@ -10,6 +10,17 @@ li {
 	list-style: none;
 }
 
+/* Search Form */
+.search-form {
+	display: flex;
+	align-items: center;
+}
+
+input {
+	height: 30px;
+	padding: 0 5px;
+}
+
 .search-form {
 	display: flex;
 	gap: 5px;
