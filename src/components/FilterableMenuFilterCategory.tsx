@@ -1,5 +1,4 @@
 import CategoryList from '../constants/CategoryList';
-import CategoryType from '../types/categoryType';
 
 type FilterableMenuFilterCategory = {
   handleClickFilterCategory: (e: React.MouseEvent<HTMLButtonElement>) => void;

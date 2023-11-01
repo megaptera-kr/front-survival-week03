@@ -21,6 +21,7 @@ export default function FilterableMenuSearch({
     >
       <label htmlFor={htmlFor}>검색</label>
       <input
+        id={htmlFor}
         placeholder={placeholder}
         value={searchText}
         onChange={handleChangeSearchText}

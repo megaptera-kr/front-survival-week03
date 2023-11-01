@@ -7,6 +7,7 @@ export default function useInput() {
     const { value } = e.target;
     setSearchText(value);
   };
+
   return {
     searchText,
     handleChangeSearchText,

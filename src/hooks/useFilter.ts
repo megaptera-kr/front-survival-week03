@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import CategoryType from '../types/categoryType';
+import { CategoryType } from '../types/categoryType';
 
 import isCategoryType from '../utils/isCategoryType';
 
@@ -12,7 +12,7 @@ export default function useFilter() {
   ) => {
     const { value } = e.currentTarget;
 
-    if (isCategoryType(value)) {
+    if (value !== filterCategory && isCategoryType(value)) {
       setFilterCategory(value);
     }
   };

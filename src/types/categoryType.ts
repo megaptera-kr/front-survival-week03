@@ -1,3 +1,1 @@
-type CategoryType = '전체' | '중식' | '한식' | '일식';
-
-export default CategoryType;
+export type CategoryType = '전체' | '중식' | '한식' | '일식';
