@@ -6,7 +6,7 @@ function MenuRow({ menu } : {menu : Menu}) {
       {menu.name}
       (
       {menu.price}
-      )
+      원)
     </li>
   );
 }
