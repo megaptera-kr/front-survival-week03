@@ -12,8 +12,7 @@ export default function App() {
   const [category, setCategory] = useState('전체');
   const categories = restaurants.reduce((acc: string[], cur: Restaurant) => (
     acc?.includes(cur.category) ? acc : [...acc, cur.category]), ['전체']);
-  const [products, setProducts] = useState(category === '전체'
-    ? restaurants : restaurants.filter((el) => el.category === category));
+  const [products, setProducts] = useState(restaurants);
 
   useEffect(() => {
     if (searchValue) {
@@ -22,6 +21,12 @@ export default function App() {
     } else setProducts(restaurants);
   }, [searchValue]);
 
+  useEffect(() => {
+    if (category !== '전체') {
+      const newList = restaurants.filter((el) => el.category === category);
+      setProducts(newList);
+    } else setProducts(restaurants);
+  }, [category]);
   return (
     <div className="filterable-product-table">
       <h1>오늘의 메뉴</h1>
