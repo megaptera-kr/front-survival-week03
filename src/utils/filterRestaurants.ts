@@ -24,6 +24,10 @@ export default function filterRestaurants(
   if (!query && category === '전체') {
     return restaurants;
   }
+  if (category !== '전체') {
+    const filterName = restaurants.filter(contains);
+    return filterName.filter((el) => el.category === category);
+  }
 
   if (!query) {
     return filterCategory;
