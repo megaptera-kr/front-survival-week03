@@ -63,6 +63,6 @@ module.exports = {
     quotes: [2, "double", { avoidEscape: false }],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "warn",
-    "object-curly-newline": ["error", { multiline: true }],
+    "object-curly-newline": "off",
   },
 };
