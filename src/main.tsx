@@ -12,7 +12,7 @@ function main() {
   root.render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
   );
 }
 

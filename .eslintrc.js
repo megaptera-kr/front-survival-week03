@@ -1,33 +1,20 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    jest: true,
-  },
+  env: { browser: true, es2021: true, jest: true },
   extends: [
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ["react", "@typescript-eslint"],
   settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
+    "import/resolver": { node: { extensions: [".js", ".jsx", ".ts", ".tsx"] } },
   },
   rules: {
     indent: ["error", 2],
@@ -41,9 +28,9 @@ module.exports = {
     "func-call-spacing": "error",
     "space-before-blocks": "error",
     "keyword-spacing": ["error", { before: true, after: true }],
-    "comma-spacing": ["error", { before: false, after: true }],
-    "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "always-multiline"],
+    // "comma-spacing": ["error", { before: false, after: true }],
+    // "comma-style": ["error", "last"],
+    // "comma-dangle": ["error", "never"],
     "space-in-parens": ["error", "never"],
     "block-spacing": "error",
     "array-bracket-spacing": ["error", "never"],
@@ -64,22 +51,18 @@ module.exports = {
     "import/extensions": [
       "error",
       "ignorePackages",
-      {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
-      },
+      { js: "never", jsx: "never", ts: "never", tsx: "never" },
     ],
     "react/jsx-filename-extension": [
       2,
-      {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-      },
+      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
     "react/prop-types": [2, { skipUndeclared: true }],
     "react/require-default-props": "off",
     "jsx-a11y/label-has-associated-control": ["error", { assert: "either" }],
     quotes: [2, "double", { avoidEscape: false }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
+    "object-curly-newline": ["error", "off"],
   },
 };

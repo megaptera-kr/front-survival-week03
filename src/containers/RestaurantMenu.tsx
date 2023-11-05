@@ -9,7 +9,7 @@ interface Props {
   data: Restaurants;
 }
 
-const RestaurantMenu = ({ data }: Props) => {
+function RestaurantMenu({ data }: Props) {
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState("");
 
@@ -21,7 +21,7 @@ const RestaurantMenu = ({ data }: Props) => {
     setCategory(category);
   }, []);
 
-  if (!data.length) return;
+  if (!data.length) return <div>Loading...</div>;
 
   const filteredData = useMemo(() => {
     if (!keyword && !category) return data;
@@ -48,7 +48,6 @@ const RestaurantMenu = ({ data }: Props) => {
             { label: "한식", value: "한식" },
             { label: "일식", value: "일식" },
           ]}
-          selected={category}
           onClick={handleCategoryClick}
         />
       </section>
@@ -57,6 +56,6 @@ const RestaurantMenu = ({ data }: Props) => {
       </section>
     </div>
   );
-};
+}
 
 export default RestaurantMenu;

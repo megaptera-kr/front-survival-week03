@@ -1,28 +1,28 @@
-import { memo } from "react";
-import { Menu, Restaurant, Restaurants } from "../types/data";
+import { Restaurant, Restaurants } from "../types/data";
 
 interface Props {
   data: Restaurants;
 }
 
-const RestaurantRow = ({ restaurant }: { restaurant: Restaurant }) => {
+function RestaurantRow({ restaurant }: { restaurant: Restaurant }) {
   const { id, name, category, menu } = restaurant;
+
   return (
     <tr key={`${id}`}>
       <td>{name}</td>
       <td>{category}</td>
       <td>
         <ul>
-          {menu.map(menuItem => (
+          {menu.map((menuItem) => (
             <li key={menuItem.id}>{`${menuItem.name}(${menuItem.price}원)`}</li>
           ))}
         </ul>
       </td>
     </tr>
   );
-};
+}
 
-const RestaurantTable = ({ data }: Props) => {
+function RestaurantTable({ data }: Props) {
   return (
     <table>
       <thead>
@@ -33,14 +33,12 @@ const RestaurantTable = ({ data }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {data.map(row => {
-          return (
-            <RestaurantRow key={`${row.id}_${row.name}`} restaurant={row} />
-          );
-        })}
+        {data.map((row) => (
+          <RestaurantRow key={`${row.id}_${row.name}`} restaurant={row} />
+        ))}
       </tbody>
     </table>
   );
-};
+}
 
 export default RestaurantTable;
