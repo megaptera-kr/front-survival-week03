@@ -30,6 +30,7 @@ module.exports = {
     },
   },
   rules: {
+    'linebreak-style': 0,
     indent: ['error', 2],
     'no-trailing-spaces': 'error',
     curly: 'error',
@@ -67,7 +68,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }],
-    'react/prop-types': [2, { skipUndeclared: true }],
+    'react/prop-types': [2, { skipUndeclared: true, customValidators: ['customValidator'] }],
     'react/require-default-props': 'off',
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
   },

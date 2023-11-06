@@ -1,0 +1,17 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.category {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+    list-style: none;
+    padding: 0;
+}
+
+table > thead > th:first-of-type {
+    padding: 0 20px;
+}
