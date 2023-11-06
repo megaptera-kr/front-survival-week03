@@ -1,7 +1,10 @@
+import data from "../restaurants.json";
+import RestaurantMenu from "./containers/RestaurantMenu";
+
 export default function App() {
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <div className="app">
+      <RestaurantMenu data={data.restaurants} />
+    </div>
   );
 }
