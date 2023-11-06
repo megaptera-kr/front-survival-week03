@@ -1,7 +1,30 @@
+import { useState } from 'react';
+
+import data from '../restaurants.json';
+import SearchInput from './components/SearchInput';
+import Category from './components/Category';
+import RestaurantsTable from './components/RestaurantsTable';
+
+import { Restaurants } from './type/Restaurants';
+
 export default function App() {
+  const [searchText, setSearchText] = useState<string>('');
+  const [category, setCategory] = useState<string>('전체');
+  const { restaurants } = data;
+
+  const categories = restaurants.reduce((acc: string[], cur: Restaurants) => (acc?.includes(cur.category) ? acc : [...acc, cur.category]), ['전체']);
+
+  const filteredRestaurants = category === '전체' ? restaurants : restaurants.filter((restaurant) => restaurant.category === category);
+
+  // eslint-disable-next-line max-len
+  const filteredTextRestaurants = filteredRestaurants.filter((restaurant) => restaurant.name.indexOf(searchText.trim()) > -1);
+
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <>
+      <h3>오늘의 메뉴</h3>
+      <SearchInput placeholder="식당 이름을 입력해주세요." setSearchText={setSearchText} />
+      <Category category={category} categories={categories} setCategory={setCategory} />
+      <RestaurantsTable restaurants={filteredTextRestaurants} />
+    </>
   );
 }
