@@ -1,7 +1,6 @@
 {
-  "editor.rulers": [
-      80
-  ],
+  "editor.rulers": [80],
+  "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
