@@ -1,7 +1,11 @@
+import FilterableRestaurantTable from "./components/FilterableRestaurantTable";
+
 export default function App() {
+  const MainTitle = "오늘의 메뉴"
   return (
-    <p>
-      과제를 진행해 주세요.
-    </p>
+    <div>
+      <h2>{MainTitle}</h2>
+      <FilterableRestaurantTable />
+    </div>
   );
 }
