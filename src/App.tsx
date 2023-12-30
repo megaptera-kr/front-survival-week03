@@ -1,7 +1,7 @@
-import FilterableRestaurantTable from "./components/FilterableRestaurantTable";
+import FilterableRestaurantTable from './components/FilterableRestaurantTable';
 
 export default function App() {
-  const MainTitle = "오늘의 메뉴"
+  const MainTitle = '오늘의 메뉴';
   return (
     <div>
       <h2>{MainTitle}</h2>

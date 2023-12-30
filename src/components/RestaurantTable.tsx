@@ -1,14 +1,12 @@
-import React from "react";
+import { Restaurants } from '../types/Restaurants';
 
-import { Restaurants } from "../types/Restaurants";
-
-import RestaurantInCategory from "./RestaurantInCategory";
+import RestaurantInCategory from './RestaurantInCategory';
 
 type RestaurantTableProps = {
   filteredCategories: Restaurants[];
 };
 
-const RestaurantTable = ({ filteredCategories }: RestaurantTableProps) => {
+function RestaurantTable({ filteredCategories }: RestaurantTableProps) {
   return (
     <table>
       <thead>
@@ -25,6 +23,6 @@ const RestaurantTable = ({ filteredCategories }: RestaurantTableProps) => {
       </tbody>
     </table>
   );
-};
+}
 
 export default RestaurantTable;

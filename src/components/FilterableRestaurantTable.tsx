@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import restaurantsData from "../../restaurants.json";
-import RestaurantTable from "./RestaurantTable";
-import SearchAndFilter from "./SearchAndFilter";
+import restaurantsData from '../../restaurants.json';
+import RestaurantTable from './RestaurantTable';
+import SearchAndFilter from './SearchAndFilter';
 
-import { FoodType } from "../types/FoodType";
-import { filterCartegories } from "../utils/filterCartegories";
-import { filterRestaurants } from "../utils/filterRestaurahts";
-import { Restaurants } from "../types/Restaurants";
+import { FoodType } from '../types/FoodType';
+import filterCategories from '../utils/filterCategories';
+import filterRestaurants from '../utils/filterRestaurahts';
+import { Restaurants } from '../types/Restaurants';
 
 const { restaurants } = restaurantsData;
 
-const FilterableRestaurantTable = () => {
-  const [query, setQuery] = useState<string>("");
-  const [foodType, setFoodType] = useState<FoodType>("전체");
+function FilterableRestaurantTable() {
+  const [query, setQuery] = useState<string>('');
+  const [foodType, setFoodType] = useState<FoodType>('전체');
 
-  const handleFoodTypes = (foodType: FoodType) => {
-    setFoodType(foodType);
+  const handleFoodTypes = (type: FoodType) => {
+    setFoodType(type);
   };
 
   const filterFoodTypes = restaurants.reduce(
-    (acc: string[], restaurant) =>
-      acc.includes(restaurant.category) ? acc : [...acc, restaurant.category],
-    []
+    (acc: string[], restaurant) => (acc.includes(restaurant.category)
+      ? acc : [...acc, restaurant.category]),
+    [],
   );
 
   const filteredRestaurants: Restaurants[] = filterRestaurants({
@@ -30,7 +30,7 @@ const FilterableRestaurantTable = () => {
     query,
   });
 
-  const filteredCategories = filterCartegories({
+  const filteredCategories = filterCategories({
     foodType,
     filteredRestaurants,
   });
@@ -45,6 +45,6 @@ const FilterableRestaurantTable = () => {
       <RestaurantTable filteredCategories={filteredCategories} />
     </>
   );
-};
+}
 
 export default FilterableRestaurantTable;

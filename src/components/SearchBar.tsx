@@ -2,7 +2,7 @@ type SearchBarProps = {
   query: string;
   setQuery: (query: string) => void;
 };
-const SearchBar = ({ query, setQuery }: SearchBarProps) => {
+function SearchBar({ query, setQuery }: SearchBarProps) {
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setQuery(value);
@@ -10,15 +10,15 @@ const SearchBar = ({ query, setQuery }: SearchBarProps) => {
 
   return (
     <>
-      <label htmlFor={"search-id"}>검색</label>
+      <label htmlFor="search-id">검색</label>
       <input
-        id={"search-id"}
+        id="search-id"
         type="text"
         placeholder="식당 이름"
         value={query}
         onChange={handleChangeQuery}
-      ></input>
+      />
     </>
   );
-};
+}
 export default SearchBar;

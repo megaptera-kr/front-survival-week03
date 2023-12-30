@@ -1,14 +1,12 @@
-import React from "react";
+import { Restaurants } from '../types/Restaurants';
 
-import { Restaurants } from "../types/Restaurants";
-
-import RestaurantMenus from "./RestaurantMenus";
+import RestaurantMenus from './RestaurantMenus';
 
 type RestaurantInCategoryProps = {
   Restaurant: Restaurants;
 };
 
-const RestaurantInCategory = ({ Restaurant }: RestaurantInCategoryProps) => {
+function RestaurantInCategory({ Restaurant }: RestaurantInCategoryProps) {
   return (
     <tr>
       <td>{Restaurant.name}</td>
@@ -22,6 +20,6 @@ const RestaurantInCategory = ({ Restaurant }: RestaurantInCategoryProps) => {
       </td>
     </tr>
   );
-};
+}
 
 export default RestaurantInCategory;
