@@ -1,4 +1,4 @@
-import FilterableProductTable from './components/FilterableProductTable';
+import FilterableRestaurantsTable from './components/FilterableRestaurantsTable';
 import { Restaurants } from './types/Restaurants';
 
 const restaurants: Restaurants[] = [
@@ -74,7 +74,7 @@ export default function App() {
   return (
     <div>
       <h1>오늘의 메뉴</h1>
-      <FilterableProductTable restaurants={restaurants} />
+      <FilterableRestaurantsTable restaurants={restaurants} />
     </div>
   );
 }
