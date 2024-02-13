@@ -1,21 +1,32 @@
-import selectCategories from '../utils/selectCategories';
-import { Restaurants } from '../types/Restaurants';
 import SearchBar from './SearchBar';
 import CategoryBtn from './CategoryBtn';
 
 type SearchAndCategoryBarProps = {
-  restaurants: Restaurants[]
+  categories: string[]
+  filterText: string;
+  setFilterText: (value: string) => void;
+  selectedCategory: string;
+  setSelectedCategory: (value: string) => void;
 }
 
-function SearchAndCategoryBar({ restaurants }: SearchAndCategoryBarProps) {
-  const categories = selectCategories(restaurants);
+function SearchAndCategoryBar({
+  categories, filterText, setFilterText, selectedCategory, setSelectedCategory,
+}: SearchAndCategoryBarProps) {
   return (
     <div>
-      <SearchBar label="검색" />
+      <SearchBar
+        label="검색"
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
       <ul style={{ display: 'flex', padding: '0px', listStyleType: 'none' }}>
         {categories
           ? (categories.map((category) => (
-            <CategoryBtn key={category} category={category} />
+            <CategoryBtn
+              key={category}
+              category={category}
+              setSelectedCategory={setSelectedCategory}
+            />
           )))
           : (<div>Loading...</div>)}
       </ul>
