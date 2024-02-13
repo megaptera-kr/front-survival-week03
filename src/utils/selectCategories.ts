@@ -1,4 +1,4 @@
-import Restaurants from '../types/Restaurants';
+import { Restaurants } from '../types/Restaurants';
 
 function selectCategories(restaurants: Restaurants[]): string[] {
   return restaurants.reduce((acc: string[], restaurant: Restaurants) => {

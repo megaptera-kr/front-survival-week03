@@ -5,12 +5,11 @@ type SearchAndCategoryBarProps = {
   categories: string[]
   filterText: string;
   setFilterText: (value: string) => void;
-  selectedCategory: string;
   setSelectedCategory: (value: string) => void;
 }
 
 function SearchAndCategoryBar({
-  categories, filterText, setFilterText, selectedCategory, setSelectedCategory,
+  categories, filterText, setFilterText, setSelectedCategory,
 }: SearchAndCategoryBarProps) {
   return (
     <div>

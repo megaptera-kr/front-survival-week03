@@ -23,7 +23,6 @@ function FilterableRestaurantsTable({ restaurants }: FilterableRestaurantsTableP
         categories={categories}
         filterText={filterText}
         setFilterText={setFilterText}
-        selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
       <RestaurantsTable restaurants={filteredRestaurants} />

@@ -1,5 +1,3 @@
-import React from 'react';
-
 type CategoryBtn = {
   category: string;
   setSelectedCategory: (value: string) => void;
