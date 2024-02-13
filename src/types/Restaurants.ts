@@ -1,14 +1,12 @@
-interface Menu {
+export interface Menu {
   id: string;
   name: string;
   price: number;
 }
 
-interface Restaurants {
+export interface Restaurants {
   id: string;
   category: string;
   name: string;
   menu: Menu[];
 }
-
-export default Restaurants;
