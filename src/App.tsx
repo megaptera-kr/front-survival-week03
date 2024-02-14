@@ -1,4 +1,21 @@
-const restaurantData = {
+type MenuItem = {
+  id: string;
+  name: string;
+  price: number;
+};
+
+type Restaurant = {
+  id: string;
+  category: string;
+  name: string;
+  menu: MenuItem[];
+};
+
+type RestaurantList = {
+  restaurants: Restaurant[];
+};
+
+const restaurantData: RestaurantList = {
   restaurants: [
     {
       id: '1',
