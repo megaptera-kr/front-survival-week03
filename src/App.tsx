@@ -1,4 +1,4 @@
-import FilterableMenuTable from './component/FilterableMenuTable';
+import FilterableRestaurantMenuTable from './component/FilterableRestaurantMenuTable';
 
 import RestaurantList from './types/RestaurantListType';
 
@@ -74,5 +74,7 @@ const restaurantData: RestaurantList = {
 };
 
 export default function App() {
-  return <FilterableMenuTable restaurants={restaurantData.restaurants} />;
+  return (
+    <FilterableRestaurantMenuTable restaurants={restaurantData.restaurants} />
+  );
 }

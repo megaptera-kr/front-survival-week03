@@ -1,3 +1,5 @@
+import RestaurantTableRow from './RestaurantTableRow';
+
 import Restaurant from '../types/RestaurantType';
 
 type RestaurantTableProps = {
@@ -17,20 +19,7 @@ export default function RestaurantTable({ restaurants }: RestaurantTableProps) {
         </thead>
         <tbody>
           {restaurants.map((restaurant) => (
-            <tr key={restaurant.id}>
-              <td>{restaurant.name}</td>
-              <td>{restaurant.category}</td>
-
-              <td>
-                {restaurant.menu.map((item) => (
-                  <ul key={item.id}>
-                    <li>
-                      {item.name}({item.price})
-                    </li>
-                  </ul>
-                ))}
-              </td>
-            </tr>
+            <RestaurantTableRow key={restaurant.id} restaurant={restaurant} />
           ))}
         </tbody>
       </table>
