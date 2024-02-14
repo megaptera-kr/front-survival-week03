@@ -1,19 +1,6 @@
-type MenuItem = {
-  id: string;
-  name: string;
-  price: number;
-};
+import FilterableMenuTable from './component/FilterableMenuTable';
 
-type Restaurant = {
-  id: string;
-  category: string;
-  name: string;
-  menu: MenuItem[];
-};
-
-type RestaurantList = {
-  restaurants: Restaurant[];
-};
+import RestaurantList from './types/RestaurantListType';
 
 const restaurantData: RestaurantList = {
   restaurants: [
@@ -86,57 +73,6 @@ const restaurantData: RestaurantList = {
   ],
 };
 
-function FilteredMenuTable({ restaurants }: RestaurantList) {
-  return (
-    <>
-      <table className='menu-table'>
-        <thead>
-          <tr>
-            <th>식당 이름</th>
-            <th>종류</th>
-            <th>메뉴</th>
-          </tr>
-        </thead>
-        <tbody>
-          {restaurants.map((restaurant) => (
-            <tr key={restaurant.id}>
-              <td>{restaurant.name}</td>
-              <td>{restaurant.category}</td>
-
-              <td>
-                {restaurant.menu.map((item) => (
-                  <ul key={item.id}>
-                    <li>
-                      {item.name}({item.price})
-                    </li>
-                  </ul>
-                ))}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
-  );
-}
-
 export default function App() {
-  return (
-    <div className='filtered-menu-container'>
-      <section>
-        <div>오늘의 메뉴</div>
-        <div>
-          <label htmlFor='input-menu-search'>검색</label>
-          <input type='text' id='input-menu-search' placeholder='식당 이름' />
-        </div>
-        <div>
-          <button type='button'>전체</button>
-          <button type='button'>중식</button>
-          <button type='button'>한식</button>
-          <button type='button'>일식</button>
-        </div>
-        <FilteredMenuTable restaurants={restaurantData.restaurants} />
-      </section>
-    </div>
-  );
+  return <FilterableMenuTable restaurants={restaurantData.restaurants} />;
 }
