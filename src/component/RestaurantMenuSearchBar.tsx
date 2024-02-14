@@ -1,7 +1,7 @@
 export default function RestaurantMenuSearchBar() {
   return (
     <>
-      <div>
+      <div className='restaurant-menu-search-bar'>
         <label htmlFor='input-menu-search'>검색</label>
         <input type='text' id='input-menu-search' placeholder='식당 이름' />
       </div>
