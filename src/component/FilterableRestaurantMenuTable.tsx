@@ -1,9 +1,10 @@
+import { useState } from 'react';
+
 import RestaurantMenuTableTitle from './RestaurantMenuTableTitle';
 import RestaurantMenuSearchBar from './RestaurantMenuSearchBar';
 import RestaurantTable from './RestaurantTable';
 
 import Restaurant from '../types/RestaurantType';
-import { useState } from 'react';
 
 type FiterableMenuTableProps = {
   restaurants: Restaurant[];
@@ -14,11 +15,11 @@ export default function FilterableRestaurantMenuTable({
 }: FiterableMenuTableProps) {
   const MENU_TABLE_TITLE = '오늘의 메뉴';
 
-  const [textField, setTextField] = useState<string>('');
+  const [searchText, setSearchText] = useState<string>('');
   const [category, setCategory] = useState<string>('');
 
-  const handleTextField = (value: string) => {
-    setTextField(value);
+  const handleSearchText = (value: string) => {
+    setSearchText(value);
   };
 
   const handleButton = (value: string) => {
@@ -26,10 +27,8 @@ export default function FilterableRestaurantMenuTable({
   };
 
   const filteredRestaurants = restaurants
-    .filter((restaurant) => restaurant.name.includes(textField))
+    .filter((restaurant) => restaurant.name.includes(searchText))
     .filter((restaurant) => {
-      console.log(category);
-
       return category ? restaurant.category === category : restaurant;
     });
 
@@ -38,8 +37,8 @@ export default function FilterableRestaurantMenuTable({
       <div className='filtered-menu-container'>
         <RestaurantMenuTableTitle title={MENU_TABLE_TITLE} />
         <RestaurantMenuSearchBar
-          textField={textField}
-          handleTextField={handleTextField}
+          searchText={searchText}
+          handleSearchText={handleSearchText}
           category={category}
           handleButton={handleButton}
         />
