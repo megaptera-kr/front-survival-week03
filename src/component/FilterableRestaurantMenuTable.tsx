@@ -15,13 +15,23 @@ export default function FilterableRestaurantMenuTable({
   const MENU_TABLE_TITLE = '오늘의 메뉴';
 
   const [textField, setTextField] = useState<string>('');
+  const [category, setCategory] = useState<string>('');
+
   const handleTextField = (value: string) => {
     setTextField(value);
   };
 
-  const filteredRestaurants = restaurants.filter((restaurant: Restaurant) =>
-    restaurant.name.includes(textField)
-  );
+  const handleButton = (value: string) => {
+    setCategory(value);
+  };
+
+  const filteredRestaurants = restaurants
+    .filter((restaurant) => restaurant.name.includes(textField))
+    .filter((restaurant) => {
+      console.log(category);
+
+      return category ? restaurant.category === category : restaurant;
+    });
 
   return (
     <>
@@ -30,6 +40,8 @@ export default function FilterableRestaurantMenuTable({
         <RestaurantMenuSearchBar
           textField={textField}
           handleTextField={handleTextField}
+          category={category}
+          handleButton={handleButton}
         />
         <RestaurantTable restaurants={filteredRestaurants} />
       </div>

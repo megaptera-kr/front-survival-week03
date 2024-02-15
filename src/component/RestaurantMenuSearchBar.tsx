@@ -4,11 +4,15 @@ import RestaurantMenuSearchButton from './RestaurantMenuSearchButton';
 type RestaurantMenuSearchBarProps = {
   textField: string;
   handleTextField: (value: string) => void;
+  category: string;
+  handleButton: (value: string) => void;
 };
 
 export default function RestaurantMenuSearchBar({
   textField,
   handleTextField,
+  category,
+  handleButton,
 }: RestaurantMenuSearchBarProps) {
   return (
     <>
@@ -20,10 +24,26 @@ export default function RestaurantMenuSearchBar({
         />
       </div>
       <div>
-        <RestaurantMenuSearchButton text='전체' />
-        <button type='button'>중식</button>
-        <button type='button'>한식</button>
-        <button type='button'>일식</button>
+        <RestaurantMenuSearchButton
+          text=''
+          category={category}
+          handleButton={handleButton}
+        />
+        <RestaurantMenuSearchButton
+          text='중식'
+          category={category}
+          handleButton={handleButton}
+        />
+        <RestaurantMenuSearchButton
+          text='한식'
+          category={category}
+          handleButton={handleButton}
+        />
+        <RestaurantMenuSearchButton
+          text='일식'
+          category={category}
+          handleButton={handleButton}
+        />
       </div>
     </>
   );
