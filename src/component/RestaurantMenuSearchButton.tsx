@@ -20,15 +20,13 @@ export default function RestaurantMenuSearchButton({
   };
 
   return (
-    <>
-      <button
-        type='button'
-        value={text}
-        style={styleButton}
-        onClick={hanleOnClick}
-      >
-        {text || '전체 '}
-      </button>
-    </>
+    <button
+      type='button'
+      value={text}
+      style={styleButton}
+      onClick={hanleOnClick}
+    >
+      {text || '전체 '}
+    </button>
   );
 }

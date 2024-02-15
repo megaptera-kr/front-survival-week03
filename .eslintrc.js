@@ -78,5 +78,6 @@ module.exports = {
     'react/require-default-props': 'off',
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
     'jsx-quotes': [2, 'prefer-single'],
+    'react/jsx-one-expression-per-line': 'off',
   },
 };

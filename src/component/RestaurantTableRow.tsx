@@ -10,17 +10,15 @@ export default function RestaurantTableRow({
   restaurant,
 }: RestaurantTableRowProps) {
   return (
-    <>
-      <tr key={restaurant.id}>
-        <td>{restaurant.name}</td>
-        <td>{restaurant.category}</td>
+    <tr key={restaurant.id}>
+      <td>{restaurant.name}</td>
+      <td>{restaurant.category}</td>
 
-        <td>
-          {restaurant.menu.map((menu) => (
-            <RestaurantMenu key={menu.id} menu={menu} />
-          ))}
-        </td>
-      </tr>
-    </>
+      <td>
+        {restaurant.menu.map((menu) => (
+          <RestaurantMenu key={menu.id} menu={menu} />
+        ))}
+      </td>
+    </tr>
   );
 }

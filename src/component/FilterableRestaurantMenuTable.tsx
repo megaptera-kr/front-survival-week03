@@ -31,28 +31,25 @@ export default function FilterableRestaurantMenuTable({
   };
 
   const categories = selectRestaurantCategories(restaurants);
-  console.log(categories);
 
   let filteredRestaurants: Restaurant[] = [];
   filteredRestaurants = selectRestaurantsBySearchText(restaurants, searchText);
   filteredRestaurants = selectRestaurantsByButton(
     filteredRestaurants,
-    category
+    category,
   );
 
   return (
-    <>
-      <div className='filtered-menu-container'>
-        <RestaurantMenuTableTitle title={MENU_TABLE_TITLE} />
-        <RestaurantMenuSearchBar
-          searchText={searchText}
-          handleSearchText={handleSearchText}
-          category={category}
-          handleButton={handleButton}
-          categories={categories}
-        />
-        <RestaurantTable restaurants={filteredRestaurants} />
-      </div>
-    </>
+    <div className='filtered-menu-container'>
+      <RestaurantMenuTableTitle title={MENU_TABLE_TITLE} />
+      <RestaurantMenuSearchBar
+        searchText={searchText}
+        handleSearchText={handleSearchText}
+        category={category}
+        handleButton={handleButton}
+        categories={categories}
+      />
+      <RestaurantTable restaurants={filteredRestaurants} />
+    </div>
   );
 }
