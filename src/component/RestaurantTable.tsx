@@ -11,7 +11,7 @@ function RestaurantTable({ restaurants }: RestaurantTableProps) {
     <table className='menu-table'>
       <thead>
         <tr>
-          <th>식당 이름</th>
+          <th style={{ paddingInline: '2rem' }}>식당 이름</th>
           <th>종류</th>
           <th>메뉴</th>
         </tr>

@@ -16,7 +16,9 @@ function RestaurantMenuSearchTextField({
 
   return (
     <>
-      <label htmlFor='input-menu-search'>검색</label>
+      <label htmlFor='input-menu-search' style={{ marginRight: '1rem' }}>
+        검색
+      </label>
       <input
         type='text'
         id='input-menu-search'

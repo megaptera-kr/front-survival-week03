@@ -7,10 +7,10 @@ type RestaurantMenuProps = {
 };
 
 function RestaurantMenu({ menu }: RestaurantMenuProps) {
-  const { id, name, price } = menu;
+  const { name, price } = menu;
 
   return (
-    <ul key={id}>
+    <ul style={{ margin: '0.1rem' }}>
       <li>
         {name}({moneyformat(price)}
         원)

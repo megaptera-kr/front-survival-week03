@@ -14,9 +14,11 @@ function RestaurantMenuSearchButton({
   };
 
   return (
-    <button type='button' value={category} onClick={hanleOnClick}>
-      {text || '전체 '}
-    </button>
+    <li style={{ marginRight: '1rem' }}>
+      <button type='button' value={category} onClick={hanleOnClick}>
+        {text || '전체 '}
+      </button>
+    </li>
   );
 }
 

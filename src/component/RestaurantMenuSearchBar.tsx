@@ -23,7 +23,7 @@ function RestaurantMenuSearchBar({
           handleSearchText={handleSearchText}
         />
       </div>
-      <>
+      <ul style={{ display: 'flex', padding: '0px', listStyle: 'none' }}>
         {categories.map((category) => (
           <RestaurantMenuSearchButton
             key={category}
@@ -32,7 +32,7 @@ function RestaurantMenuSearchBar({
             handleButton={handleButton}
           />
         ))}
-      </>
+      </ul>
     </>
   );
 }
