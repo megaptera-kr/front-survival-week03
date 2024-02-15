@@ -14,6 +14,8 @@ function RestaurantMenuSearchBar({
   handleButton,
   categories,
 }: RestaurantMenuSearchBarProps) {
+  const adjustCategories: string[] = ['', ...categories];
+
   return (
     <>
       <div className='restaurant-menu-search-bar'>
@@ -24,7 +26,7 @@ function RestaurantMenuSearchBar({
         />
       </div>
       <ul style={{ display: 'flex', padding: '0px', listStyle: 'none' }}>
-        {categories.map((category) => (
+        {adjustCategories.map((category) => (
           <RestaurantMenuSearchButton
             key={category}
             text={category}
