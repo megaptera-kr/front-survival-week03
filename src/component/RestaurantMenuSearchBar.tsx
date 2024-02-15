@@ -8,7 +8,7 @@ type RestaurantMenuSearchBarProps = {
   categories: string[];
 };
 
-export default function RestaurantMenuSearchBar({
+function RestaurantMenuSearchBar({
   searchText,
   handleSearchText,
   handleButton,
@@ -36,3 +36,5 @@ export default function RestaurantMenuSearchBar({
     </>
   );
 }
+
+export default RestaurantMenuSearchBar;

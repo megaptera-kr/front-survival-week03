@@ -14,7 +14,7 @@ type FilterableRestaurantMenuTableProps = {
   restaurants: Restaurant[];
 };
 
-export default function FilterableRestaurantMenuTable({
+function FilterableRestaurantMenuTable({
   restaurants,
 }: FilterableRestaurantMenuTableProps) {
   const MENU_TABLE_TITLE = '오늘의 메뉴';
@@ -52,3 +52,5 @@ export default function FilterableRestaurantMenuTable({
     </div>
   );
 }
+
+export default FilterableRestaurantMenuTable;

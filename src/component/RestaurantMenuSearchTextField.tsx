@@ -4,7 +4,7 @@ type RestaurantMenuSearchTextFieldProps = {
   handleSearchText: (value: string) => void;
 };
 
-export default function RestaurantMenuSearchTextField({
+function RestaurantMenuSearchTextField({
   placeholder,
   searchText,
   handleSearchText,
@@ -27,3 +27,5 @@ export default function RestaurantMenuSearchTextField({
     </>
   );
 }
+
+export default RestaurantMenuSearchTextField;

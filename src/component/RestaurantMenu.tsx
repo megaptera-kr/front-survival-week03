@@ -6,7 +6,7 @@ type RestaurantMenuProps = {
   menu: RestaurantMenu;
 };
 
-export default function RestaurantMenu({ menu }: RestaurantMenuProps) {
+function RestaurantMenu({ menu }: RestaurantMenuProps) {
   const { id, name, price } = menu;
 
   return (
@@ -18,3 +18,5 @@ export default function RestaurantMenu({ menu }: RestaurantMenuProps) {
     </ul>
   );
 }
+
+export default RestaurantMenu;

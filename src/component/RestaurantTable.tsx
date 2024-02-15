@@ -6,7 +6,7 @@ type RestaurantTableProps = {
   restaurants: Restaurant[];
 };
 
-export default function RestaurantTable({ restaurants }: RestaurantTableProps) {
+function RestaurantTable({ restaurants }: RestaurantTableProps) {
   return (
     <table className='menu-table'>
       <thead>
@@ -24,3 +24,5 @@ export default function RestaurantTable({ restaurants }: RestaurantTableProps) {
     </table>
   );
 }
+
+export default RestaurantTable;

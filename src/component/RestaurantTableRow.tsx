@@ -6,9 +6,7 @@ type RestaurantTableRowProps = {
   restaurant: Restaurant;
 };
 
-export default function RestaurantTableRow({
-  restaurant,
-}: RestaurantTableRowProps) {
+function RestaurantTableRow({ restaurant }: RestaurantTableRowProps) {
   return (
     <tr key={restaurant.id}>
       <td>{restaurant.name}</td>
@@ -22,3 +20,5 @@ export default function RestaurantTableRow({
     </tr>
   );
 }
+
+export default RestaurantTableRow;

@@ -4,7 +4,7 @@ type RestaurantMenuSearchButtonProps = {
   handleButton: (value: string) => void;
 };
 
-export default function RestaurantMenuSearchButton({
+function RestaurantMenuSearchButton({
   text,
   category,
   handleButton,
@@ -19,3 +19,5 @@ export default function RestaurantMenuSearchButton({
     </button>
   );
 }
+
+export default RestaurantMenuSearchButton;
