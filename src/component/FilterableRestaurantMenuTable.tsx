@@ -4,7 +4,10 @@ import RestaurantMenuTableTitle from './RestaurantMenuTableTitle';
 import RestaurantMenuSearchBar from './RestaurantMenuSearchBar';
 import RestaurantTable from './RestaurantTable';
 
+import selectRestaurantsBySearchText from '../utils/selectRestaurantsBySearchText';
+
 import Restaurant from '../types/RestaurantType';
+import selectRestaurantsByButton from '../utils/selectRestaurantsByButton';
 
 type FiterableMenuTableProps = {
   restaurants: Restaurant[];
@@ -26,11 +29,12 @@ export default function FilterableRestaurantMenuTable({
     setCategory(value);
   };
 
-  const filteredRestaurants = restaurants
-    .filter((restaurant) => restaurant.name.includes(searchText))
-    .filter((restaurant) => {
-      return category ? restaurant.category === category : restaurant;
-    });
+  let filteredRestaurants: Restaurant[] = [];
+  filteredRestaurants = selectRestaurantsBySearchText(restaurants, searchText);
+  filteredRestaurants = selectRestaurantsByButton(
+    filteredRestaurants,
+    category
+  );
 
   return (
     <>
