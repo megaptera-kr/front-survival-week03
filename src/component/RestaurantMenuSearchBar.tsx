@@ -1,4 +1,5 @@
 import RestaurantMenuSearchTextField from './RestaurantMenuSearchTextField';
+import RestaurantMenuSearchButton from './RestaurantMenuSearchButton';
 
 export default function RestaurantMenuSearchBar() {
   return (
@@ -7,7 +8,7 @@ export default function RestaurantMenuSearchBar() {
         <RestaurantMenuSearchTextField />
       </div>
       <div>
-        <button type='button'>전체</button>
+        <RestaurantMenuSearchButton text='전체' />
         <button type='button'>중식</button>
         <button type='button'>한식</button>
         <button type='button'>일식</button>
