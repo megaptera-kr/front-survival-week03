@@ -8,7 +8,7 @@ type RestaurantTableRowProps = {
 
 function RestaurantTableRow({ restaurant }: RestaurantTableRowProps) {
   return (
-    <tr key={restaurant.id}>
+    <tr>
       <td>{restaurant.name}</td>
       <td>{restaurant.category}</td>
 
