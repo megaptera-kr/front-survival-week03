@@ -10,13 +10,13 @@ import selectRestaurantsByButton from '../utils/selectRestaurantsByButton';
 
 import Restaurant from '../types/RestaurantType';
 
-type FiterableMenuTableProps = {
+type FilterableRestaurantMenuTableProps = {
   restaurants: Restaurant[];
 };
 
 export default function FilterableRestaurantMenuTable({
   restaurants,
-}: FiterableMenuTableProps) {
+}: FilterableRestaurantMenuTableProps) {
   const MENU_TABLE_TITLE = '오늘의 메뉴';
 
   const [searchText, setSearchText] = useState<string>('');

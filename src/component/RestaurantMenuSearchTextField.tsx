@@ -1,14 +1,14 @@
-type RestaurantMenuTextFieldProps = {
+type RestaurantMenuSearchTextFieldProps = {
   placeholder: string;
   searchText: string;
   handleSearchText: (value: string) => void;
 };
 
-export default function RestaurantMenuTextField({
+export default function RestaurantMenuSearchTextField({
   placeholder,
   searchText,
   handleSearchText,
-}: RestaurantMenuTextFieldProps) {
+}: RestaurantMenuSearchTextFieldProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     handleSearchText(value);
