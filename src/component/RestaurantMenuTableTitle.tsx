@@ -7,7 +7,7 @@ export default function RestaurantMenuTableTitle({
 }: RestaurantMenuTableTitleProps) {
   return (
     <>
-      <div>{title}</div>
+      <h1>{title}</h1>
     </>
   );
 }
