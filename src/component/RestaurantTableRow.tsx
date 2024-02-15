@@ -12,9 +12,11 @@ function RestaurantTableRow({ restaurant }: RestaurantTableRowProps) {
       <td>{restaurant.name}</td>
       <td>{restaurant.category}</td>
       <td style={{ padding: '0.4rem 0.4rem' }}>
-        {restaurant.menu.map((menu) => (
-          <RestaurantMenu key={menu.id} menu={menu} />
-        ))}
+        <ul style={{ margin: '0.1rem' }}>
+          {restaurant.menu.map((menu) => (
+            <RestaurantMenu key={menu.id} menu={menu} />
+          ))}
+        </ul>
       </td>
     </tr>
   );
