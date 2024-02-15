@@ -1,11 +1,23 @@
 import RestaurantMenuSearchTextField from './RestaurantMenuSearchTextField';
 import RestaurantMenuSearchButton from './RestaurantMenuSearchButton';
 
-export default function RestaurantMenuSearchBar() {
+type RestaurantMenuSearchBarProps = {
+  textField: string;
+  handleTextField: (value: string) => void;
+};
+
+export default function RestaurantMenuSearchBar({
+  textField,
+  handleTextField,
+}: RestaurantMenuSearchBarProps) {
   return (
     <>
       <div className='restaurant-menu-search-bar'>
-        <RestaurantMenuSearchTextField />
+        <RestaurantMenuSearchTextField
+          placeholder='식당 이름'
+          textField={textField}
+          handleTextField={handleTextField}
+        />
       </div>
       <div>
         <RestaurantMenuSearchButton text='전체' />
