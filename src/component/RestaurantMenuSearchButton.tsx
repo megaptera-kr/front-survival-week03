@@ -10,22 +10,11 @@ export default function RestaurantMenuSearchButton({
   handleButton,
 }: RestaurantMenuSearchButtonProps) {
   const hanleOnClick = () => {
-    category = text;
     handleButton(category);
   };
 
-  const styleButton = {
-    backgroundColor: text === category ? 'yellow' : '',
-    marginRight: '1rem',
-  };
-
   return (
-    <button
-      type='button'
-      value={text}
-      style={styleButton}
-      onClick={hanleOnClick}
-    >
+    <button type='button' value={category} onClick={hanleOnClick}>
       {text || '전체 '}
     </button>
   );

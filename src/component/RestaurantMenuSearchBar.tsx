@@ -4,7 +4,6 @@ import RestaurantMenuSearchButton from './RestaurantMenuSearchButton';
 type RestaurantMenuSearchBarProps = {
   searchText: string;
   handleSearchText: (value: string) => void;
-  category: string;
   handleButton: (value: string) => void;
   categories: string[];
 };
@@ -12,7 +11,6 @@ type RestaurantMenuSearchBarProps = {
 export default function RestaurantMenuSearchBar({
   searchText,
   handleSearchText,
-  category,
   handleButton,
   categories,
 }: RestaurantMenuSearchBarProps) {
@@ -25,16 +23,16 @@ export default function RestaurantMenuSearchBar({
           handleSearchText={handleSearchText}
         />
       </div>
-      <div>
-        {categories.map((categorie) => (
+      <>
+        {categories.map((category) => (
           <RestaurantMenuSearchButton
-            key={categorie}
-            text={categorie}
+            key={category}
+            text={category}
             category={category}
             handleButton={handleButton}
           />
         ))}
-      </div>
+      </>
     </>
   );
 }

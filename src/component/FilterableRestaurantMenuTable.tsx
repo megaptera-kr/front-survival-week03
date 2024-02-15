@@ -45,7 +45,6 @@ export default function FilterableRestaurantMenuTable({
       <RestaurantMenuSearchBar
         searchText={searchText}
         handleSearchText={handleSearchText}
-        category={category}
         handleButton={handleButton}
         categories={categories}
       />
