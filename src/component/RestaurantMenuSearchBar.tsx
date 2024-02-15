@@ -6,6 +6,7 @@ type RestaurantMenuSearchBarProps = {
   handleSearchText: (value: string) => void;
   category: string;
   handleButton: (value: string) => void;
+  categories: string[];
 };
 
 export default function RestaurantMenuSearchBar({
@@ -13,6 +14,7 @@ export default function RestaurantMenuSearchBar({
   handleSearchText,
   category,
   handleButton,
+  categories,
 }: RestaurantMenuSearchBarProps) {
   return (
     <>
@@ -24,26 +26,14 @@ export default function RestaurantMenuSearchBar({
         />
       </div>
       <div>
-        <RestaurantMenuSearchButton
-          text=''
-          category={category}
-          handleButton={handleButton}
-        />
-        <RestaurantMenuSearchButton
-          text='중식'
-          category={category}
-          handleButton={handleButton}
-        />
-        <RestaurantMenuSearchButton
-          text='한식'
-          category={category}
-          handleButton={handleButton}
-        />
-        <RestaurantMenuSearchButton
-          text='일식'
-          category={category}
-          handleButton={handleButton}
-        />
+        {categories.map((categorie) => (
+          <RestaurantMenuSearchButton
+            key={categorie}
+            text={categorie}
+            category={category}
+            handleButton={handleButton}
+          />
+        ))}
       </div>
     </>
   );
