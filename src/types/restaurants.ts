@@ -5,6 +5,7 @@ export type MenuItem = {
 }
 
 export type FoodCategory = '한식' | '중식' | '일식'
+export type FoodCategoryWithAll = FoodCategory | '전체'
 
 export type Restaurant = {
   id: number
