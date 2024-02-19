@@ -1,5 +1,5 @@
-import FilterableRestaurantTable from "./components/FilterableRestaurantTable";
-import restaurantsData from "../restaurants.json";
+import FilterableRestaurantTable from './components/FilterableRestaurantTable';
+import restaurantsData from '../restaurants.json';
 
 const { restaurants } = restaurantsData;
 

@@ -1,6 +1,14 @@
-import RestaurantRow from "./RestaurantRow";
+import RestaurantRow from './RestaurantRow';
 
-export default function RestaurantsTable({ restaurants }) {
+import Restaurant from '../types/Restaurant';
+
+type RestaurantTableProps = {
+  restaurants: Restaurant[];
+};
+
+export default function RestaurantsTable({
+  restaurants,
+}: RestaurantTableProps) {
   return (
     <table>
       <thead>

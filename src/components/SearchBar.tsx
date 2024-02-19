@@ -1,5 +1,5 @@
-import Field from "./Field";
-import CategoryButton from "./CategoryButton";
+import Field from './Field';
+import CategoryButton from './CategoryButton';
 
 type SearchBarProps = {
   categories: string[];

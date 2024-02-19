@@ -1,6 +1,6 @@
-import MenuList from "./MenuList";
+import MenuList from './MenuList';
 
-import Restaurant from "../types/Restaurant";
+import Restaurant from '../types/Restaurant';
 
 type RestaurantRowProps = {
   restaurant: Restaurant;
