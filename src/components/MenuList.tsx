@@ -7,16 +7,12 @@ type MenuListProps = {
 export default function MenuList({ menu }: MenuListProps) {
   return (
     <ul>
-      {menu.map((food) => {
-        const { name, price } = food;
-
-        return (
-          <li key={name}>
-            {name}({price.toLocaleString()}
-            원)
-          </li>
-        );
-      })}
+      {menu.map((food) => (
+        <li key={food.name}>
+          {food.name}
+          {food.price.toLocaleString()}
+        </li>
+      ))}
     </ul>
   );
 }
