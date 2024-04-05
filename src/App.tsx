@@ -1,4 +1,4 @@
-import RestaurantRow from './components/RestaurantRow';
+import FilterableRestaurantTable from './components/template/FilterableRestaurantTable';
 import { Restaurant } from './types/Restaurant';
 
 const restaurants:Restaurant[] = [
@@ -71,45 +71,11 @@ const restaurants:Restaurant[] = [
 ];
 
 export default function App() {
-  const categories = restaurants.reduce(
-    (acc: string[], restaurant) => (acc.includes(restaurant.category)
-      ? acc : [...acc, restaurant.category])
-    , [],
-  );
-
   return (
     <div>
       <h1>오늘의 메뉴</h1>
 
-      <div>
-        <label htmlFor="search">검색</label>
-        <input type="text" id="search" placeholder="식당 이름" />
-      </div>
-
-      <div>
-        <button type="button">전체</button>
-        {categories.map((category) => (
-          <button key={category} type="button">{category}</button>
-        ))}
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>식당 이름</th>
-            <th>종류</th>
-            <th>메뉴</th>
-          </tr>
-        </thead>
-        <tbody>
-          {restaurants.map((restaurant) => (
-            <RestaurantRow
-              key={restaurant.id}
-              restaurant={restaurant}
-            />
-          ))}
-        </tbody>
-      </table>
+      <FilterableRestaurantTable restaurants={restaurants} />
     </div>
   );
 }
