@@ -1,7 +1,7 @@
-import { Restaurant } from '../types/Restaurant';
+import { Restaurant } from '../../types/Restaurant';
 
 type RestaurantRowProps = {
-	restaurant: Restaurant
+  restaurant: Restaurant
 }
 export default function RestaurantRow({ restaurant }: RestaurantRowProps) {
   return (
@@ -14,7 +14,7 @@ export default function RestaurantRow({ restaurant }: RestaurantRowProps) {
             <li key={food.id}>
               {food.name}
               (
-              {food.price}
+              {`${food.price.toLocaleString('ko-kr')}원`}
               )
             </li>
           ))}
