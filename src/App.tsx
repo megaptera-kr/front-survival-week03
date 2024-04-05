@@ -1,4 +1,4 @@
-import FilterableRestaurantTable from './components/template/FilterableRestaurantTable';
+import FilterableRestaurantTable from './components/organism/FilterableRestaurantTable';
 import { Restaurant } from './types/Restaurant';
 
 const restaurants:Restaurant[] = [
