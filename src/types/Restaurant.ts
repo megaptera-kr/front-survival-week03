@@ -1,12 +1,14 @@
+import { Category } from './Category';
+
 type Menu = {
-	id: string;
-	name:string;
-	price:number
+  id: string;
+  name:string;
+  price:number
 }
 
 export type Restaurant = {
-	id:string;
-	category:string;
-	name:string;
-	menu: Menu[]
+  id:string;
+  category:Category;
+  name:string;
+  menu: Menu[]
 }
