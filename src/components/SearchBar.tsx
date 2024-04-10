@@ -1,5 +1,4 @@
-import TextField from "./TextFiled";
-
+import TextField from './TextFiled';
 
 type SearchBarProps = {
   categories: string[];
@@ -14,8 +13,8 @@ export default function SearchBar({
   return (
     <div>
       <TextField
-        label="검색"
-        placeholder="식당 이름"
+        label='검색'
+        placeholder='식당 이름'
         filterText={filterText}
         setFilterText={setFilterText}
       />

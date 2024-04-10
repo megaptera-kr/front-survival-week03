@@ -32,7 +32,7 @@ export default function TextField({
         placeholder={placeholder}
         value={filterText}
         onChange={handleChange}
-      />  
+      />
     </div>
   );
 }
