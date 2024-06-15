@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { restaurants } from '../restaurants.json';
 import selectCategories from './utils/selectCategories';
-import TextFiled from './components/TextField';
 import filterRestaurants from './utils/filterRestaurants';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
   const [filterText, setFilterText] = useState<string>('');
@@ -16,37 +16,12 @@ export default function App() {
     <div className="filterable-restaurant-table">
       <h1>오늘의 메뉴</h1>
       <div>
-        <div className="search-bar">
-          <TextFiled
-            label="검색"
-            placeholder="식당 이름"
-            filterText={filterText}
-            setFilterText={setFilterText}
-          />
-          <ul
-            style={{
-              listStyle: 'none',
-              display: 'flex',
-              padding: 0,
-            }}
-          >
-            {['전체', ...categories].map((category) => (
-              <li
-                key={category}
-                style={{
-                  paddingRight: '1rem',
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setFilterCategory(category)}
-                >
-                  {category}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SearchBar
+          categories={categories}
+          filterText={filterText}
+          setFilterText={setFilterText}
+          setFilterCategory={setFilterCategory}
+        />
         <div className="restaurants">
           <table>
             <thead>
