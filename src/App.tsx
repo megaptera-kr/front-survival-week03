@@ -1,29 +1,27 @@
+import { useState } from 'react';
 import { restaurants } from '../restaurants.json';
 import selectCategories from './utils/selectCategories';
+import TextFiled from './components/TextField';
+import filterRestaurants from './utils/filterRestaurants';
 
 export default function App() {
+  const [textFiled, setTextField] = useState<string>('');
+
   const categories = selectCategories(restaurants);
+
+  const filteredRestaurants = filterRestaurants(restaurants, textFiled);
 
   return (
     <div className="filterable-restaurant-table">
       <h1>오늘의 메뉴</h1>
       <div>
         <div className="search-bar">
-          <div>
-            <label
-              htmlFor="input-검색"
-              style={{
-                paddingRight: '1rem',
-              }}
-            >
-              검색
-            </label>
-            <input
-              id="input-검색"
-              type="text"
-              placeholder="식당 이름"
-            />
-          </div>
+          <TextFiled
+            label="검색"
+            placeholder="식당 이름"
+            textField={textFiled}
+            setTextField={setTextField}
+          />
           <ul
             style={{
               listStyle: 'none',
@@ -63,7 +61,7 @@ export default function App() {
               </tr>
             </thead>
             <tbody>
-              {restaurants.map((restaurant) => (
+              {filteredRestaurants.map((restaurant) => (
                 <tr
                   key={restaurant.id}
                 >
