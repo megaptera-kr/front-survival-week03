@@ -1,11 +1,8 @@
 import { restaurants } from '../restaurants.json';
-import Restaurant from './type/Restaurant';
+import selectCategories from './utils/selectCategories';
 
 export default function App() {
-  const categories = restaurants.reduce((acc: string[], restaurant: Restaurant) => {
-    const { category } = restaurant;
-    return acc.includes(category) ? acc : [...acc, category];
-  }, []);
+  const categories = selectCategories(restaurants);
 
   return (
     <div className="filterable-restaurant-table">
