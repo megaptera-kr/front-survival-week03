@@ -5,11 +5,12 @@ import TextFiled from './components/TextField';
 import filterRestaurants from './utils/filterRestaurants';
 
 export default function App() {
-  const [textFiled, setTextField] = useState<string>('');
+  const [filterText, setFilterText] = useState<string>('');
+  const [filterCategory, setFilterCategory] = useState<string>('');
 
   const categories = selectCategories(restaurants);
 
-  const filteredRestaurants = filterRestaurants(restaurants, textFiled);
+  const filteredRestaurants = filterRestaurants(restaurants, { filterText, filterCategory });
 
   return (
     <div className="filterable-restaurant-table">
@@ -19,8 +20,8 @@ export default function App() {
           <TextFiled
             label="검색"
             placeholder="식당 이름"
-            textField={textFiled}
-            setTextField={setTextField}
+            filterText={filterText}
+            setFilterText={setFilterText}
           />
           <ul
             style={{
@@ -38,6 +39,7 @@ export default function App() {
               >
                 <button
                   type="button"
+                  onClick={() => setFilterCategory(category)}
                 >
                   {category}
                 </button>

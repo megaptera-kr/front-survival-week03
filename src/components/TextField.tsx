@@ -3,17 +3,17 @@ import React from 'react';
 type TextFieldProps = {
   label: string;
   placeholder: string;
-  textField: string;
-  setTextField: (value: string) => void;
+  filterText: string;
+  setFilterText: (value: string) => void;
 };
 
 export default function TextFiled({
-  label, placeholder, textField, setTextField,
+  label, placeholder, filterText, setFilterText,
 }: TextFieldProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
 
-    setTextField(value);
+    setFilterText(value);
   };
 
   const id = `input-${label}`;
@@ -31,7 +31,7 @@ export default function TextFiled({
         id={id}
         type="text"
         placeholder={placeholder}
-        value={textField}
+        value={filterText}
         onChange={handleChange}
       />
     </div>
