@@ -3,10 +3,11 @@ import { restaurants } from '../restaurants.json';
 import selectCategories from './utils/selectCategories';
 import filterRestaurants from './utils/filterRestaurants';
 import SearchBar from './components/SearchBar';
+import RestarurantTable from './components/RestaurantTable';
 
 export default function App() {
   const [filterText, setFilterText] = useState<string>('');
-  const [filterCategory, setFilterCategory] = useState<string>('');
+  const [filterCategory, setFilterCategory] = useState<string>('전체');
 
   const categories = selectCategories(restaurants);
 
@@ -22,50 +23,9 @@ export default function App() {
           setFilterText={setFilterText}
           setFilterCategory={setFilterCategory}
         />
-        <div className="restaurants">
-          <table>
-            <thead>
-              <tr>
-                <th
-                  style={{
-                    paddingInline: '2rem',
-                  }}
-                >
-                  식당 이름
-                </th>
-                <th>종류</th>
-                <th>메뉴</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredRestaurants.map((restaurant) => (
-                <tr
-                  key={restaurant.id}
-                >
-                  <td>{restaurant.name}</td>
-                  <td>{restaurant.category}</td>
-                  <td>
-                    {restaurant.menu.map((food) => (
-                      <ul
-                        key={food.id}
-                        style={{
-                          margin: 0,
-                        }}
-                      >
-                        <li>
-                          {food.name}
-                          (
-                          {food.price}
-                          원)
-                        </li>
-                      </ul>
-                    ))}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <RestarurantTable
+          filteredRestaurants={filteredRestaurants}
+        />
       </div>
     </div>
   );
