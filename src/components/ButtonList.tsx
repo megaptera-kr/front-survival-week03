@@ -18,10 +18,10 @@ export default function ButtonList({
   };
   return (
     <div>
-      <button onClick={() => handleFilterMenuClick('')}>전체</button>
-      <button onClick={() => handleFilterMenuClick('중식')}>중식</button>
-      <button onClick={() => handleFilterMenuClick('한식')}>한식</button>
-      <button onClick={() => handleFilterMenuClick('일식')}>일식</button>
+      <button type="button" onClick={() => handleFilterMenuClick('')}>전체</button>
+      <button type="button" onClick={() => handleFilterMenuClick('중식')}>중식</button>
+      <button type="button" onClick={() => handleFilterMenuClick('한식')}>한식</button>
+      <button type="button" onClick={() => handleFilterMenuClick('일식')}>일식</button>
     </div>
   );
 }

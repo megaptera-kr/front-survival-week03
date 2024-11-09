@@ -9,10 +9,11 @@ import SearchBox from './components/SearchBox';
 export default function App() {
   const { restaurants } : { restaurants: Restaurant[]} = restaurantsList;
   // filterMenu가 있어야 하는 곳
-    const [filterMenu, setFilterMenu] = React.useState(restaurants);
+  const [filterMenu, setFilterMenu] = React.useState(restaurants);
   // filterText가 있어야 하는 곳
   const [filterText, setFilterText] = useState<string>('');
 
+  // eslint-disable-next-line max-len
   const filteredRestaurants = filterMenu.filter((restaurant) => restaurant.name.includes(filterText));
 
   return (
