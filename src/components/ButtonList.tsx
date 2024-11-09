@@ -3,7 +3,7 @@ import React from 'react';
 import Restaurant from '../types/restaurants';
 
 type ButtonListProps = {
-    setFilterMenu: (category: string) => void;
+    setFilterMenu: (filteredRestaurants: Restaurant[]) => void;
     restaurants: Restaurant[];
 }
 
