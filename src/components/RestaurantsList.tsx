@@ -1,5 +1,7 @@
 import MenuList from './MenuList';
 
+import Restaurant from '../types/restaurants';
+
 type RestaurantsListProps = {
     restaurants: Restaurant[];
 }

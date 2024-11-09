@@ -1,3 +1,5 @@
+import Menu from '../types/restaurants';
+
 type MenuListProps = {
     menu : Menu[];
 }

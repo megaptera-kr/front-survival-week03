@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-import restaurantsList from '../restaurants.json';
+import { restaurants } from '../restaurants.json';
 
 import RestaurantsTable from './components/RestaurantsTable';
 import ButtonList from './components/ButtonList';
 import SearchBox from './components/SearchBox';
 
 export default function App() {
-  const { restaurants } : { restaurants: Restaurant[]} = restaurantsList;
   // filterMenu가 있어야 하는 곳
   const [filterMenu, setFilterMenu] = React.useState(restaurants);
   // filterText가 있어야 하는 곳
@@ -24,7 +23,10 @@ export default function App() {
         filterText={filterText}
         setFilterText={setFilterText}
       />
-      <ButtonList setFilterMenu={setFilterMenu} restaurants={restaurants} />
+      <ButtonList
+        setFilterMenu={setFilterMenu}
+        restaurants={restaurants}
+      />
       <RestaurantsTable restaurants={filteredRestaurants} />
     </div>
   );

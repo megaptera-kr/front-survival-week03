@@ -10,3 +10,5 @@ interface Restaurant {
     name: string;
     menu: Menu[];
 }
+
+export default Restaurant;

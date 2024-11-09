@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Restaurant from '../types/restaurants';
+
 import RestaurantsList from './RestaurantsList';
 
 type RestaurantsTableProps = {
